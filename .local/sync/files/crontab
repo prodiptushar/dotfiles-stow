@@ -1,0 +1,11 @@
+
+SHELL=/bin/bash
+
+*/20 * * * * prodip rclone copy /home/prodip/Document/org Notes:org_notes
+
+*/10 * * * * /usr/local/bin/mailsync -q
+00 22 * * * pacman -Qqe > ~/packages
+@daily /home/prodip/.local/bin//trash-empty 30
+#0 * * * * root updatedb
+#*/5 * * * * prodip rsync -rvu --delete "/home/prodip/Notes/" "/home/prodip/Document/org/Phone"
+#*/5 * * * * prodip rclone sync /home/prodip/Document/org-notes Notes:org_notes

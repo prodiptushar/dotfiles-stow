@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+notify-send -t 3000 "Playing Video" "$(xclip -o | sed 's/youtube/nsfwyoutube/g')";
+mpv --ytdl-format="[height<=720]" --force-seekable=yes  --speed=1.0 "$(xclip -o | sed 's/youtube/nsfwyoutube/g')" &

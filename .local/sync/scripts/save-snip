@@ -1,0 +1,11 @@
+#!/bin/bash
+
+bookmark="$(wl-paste)"
+file="$HOME/.local/sync/files/snippets
+
+if grep -q "$bookmark" "$file"; then
+  notify-send "Oops" "Already bookmarked"
+else
+  notify-send "Bookmark Added!" "$bookmark is now saved to the snippets."
+  echo "$bookmark" >> "$file"
+fi

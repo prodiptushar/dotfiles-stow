@@ -1,0 +1,12 @@
+account prodiptushar01@gmail.com
+host smtp.gmail.com
+port 587
+from prodiptushar01@gmail.com
+user prodiptushar01@gmail.com
+passwordeval "pass prodiptushar01@gmail.com"
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/prodip/.config/msmtp/msmtp.log
+# tls_starttls
+

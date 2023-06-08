@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# type="$(file -b $1)"
+# if [ "${type%%,*}" == "PDF document" ]; then
+#    zathura $1 
+# fi
+
+ ext="${1##*.}"
+ mpvFiles="mkv mp3 mp4 avi mov wmv flv gif webm"
+ fehFiles="png jpg jpeg jpe"
+ # wgetFiles="flac opus mp3?source=feed "
+ pdfFiles="pdf"
+
+ if echo $fehFiles | grep -w $ext > /dev/null; then
+ 	 nohup sxiv "$1" >/dev/null &
+ elif echo $mpvFiles | grep -w $ext > /dev/null; then
+ 	 nohup mpv --loop "$1" > /dev/null &
+ elif echo $pdfFiles | grep -w $ext > /dev/null; then
+ 	 nohup zathura "$1" >/dev/null &
+ else
+     nvim "$1" 
+ fi
+

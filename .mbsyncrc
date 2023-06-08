@@ -1,0 +1,26 @@
+
+IMAPStore prodiptushar01@gmail.com-remote
+Host imap.gmail.com
+Port 993
+User prodiptushar01@gmail.com
+PassCmd "pass prodiptushar01@gmail.com"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore prodiptushar01@gmail.com-local
+Subfolders Verbatim
+Path /home/prodip/.local/share/mail/prodiptushar01@gmail.com/
+Inbox /home/prodip/.local/share/mail/prodiptushar01@gmail.com/INBOX
+
+Channel prodiptushar01@gmail.com
+Expunge Both
+Far :prodiptushar01@gmail.com-remote:
+Near :prodiptushar01@gmail.com-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+

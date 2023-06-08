@@ -1,0 +1,11 @@
+#nitrogen --restore &
+#compton &
+#dwmblocks &
+#emote &
+#bash ~/.config/polybar/launch.sh --forest &
+#sudo docker run -d -t -p 5660:80 --name rss-bridge rssbridge/rss-bridge:latest &
+
+# flameshot &
+# copyq & 
+#mw -Y
+#ibus-daemon -drxR & 

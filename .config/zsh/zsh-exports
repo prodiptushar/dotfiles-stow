@@ -1,0 +1,63 @@
+#!/bin/sh
+HISTFILE=$HOME/.config/zsh/history
+HISTSIZE=100000
+SAVEHIST=100000
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+export PATH=$HOME/.cargo/bin:$PATH
+GUIX_PROFILE="/home/prodip/.guix-profile"
+    . "$GUIX_PROFILE/etc/profile"
+ # export MOZ_ENABLE_WAYLAND=1
+GUIX_PROFILE="/home/prodip/.config/guix/current"
+    . "$GUIX_PROFILE/etc/profile"
+export GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
+#export PATH=$HOME/.local/share/go/bin:$PATH
+#export GOPATH=$HOME/.local/share/go
+#export PATH=$HOME/.fnm:$PATH
+#export PATH="$PATH:./node_modules/.bin"
+#eval "$(fnm env)"
+eval "$(zoxide init zsh)"
+export NETLIFY_AUTH_TOKEN=dPpDrrQLXXXuwoTP_cV6qI1UiE970Zp_KMJoNDEIs9Y
+export TERMINAL=foo
+# eval "`pip completion --zsh`"
+export PATH=$HOME/.local/bin/:$HOME/.local/sync/scripts/:$HOME/.config/emacs/bin/:$HOME/.programs/bin/:$PATH
+export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
+. /etc/profile.d/fzf.zsh
+export VISUAL='nvim'
+export _ZO_EXCLUDE_DIRS=$HOME/Data/Phone/Android/data/*
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$("$HOME/.miniconda/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "$HOME/.miniconda/etc/profile.d/conda.sh" ]; then
+#         . "$HOME/.miniconda/etc/profile.d/conda.sh"
+#     else
+#         export PATH="$HOME/.miniconda/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# Nix
+export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
+source /etc/profile.d/nix.sh
+
+
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
+
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
+
+
+# Nix
+setopt HIST_IGNORE_SPACE
+# # <<< conda initialize <<<

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+dwl -s 'somebar;swaybg -m fit -i wallpapers/wallpaperflare.com_wallpaper\ \(1\).jpg' 

@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -avu --delete "/home/prodip/Document/org/" "/home/prodip/Notes"

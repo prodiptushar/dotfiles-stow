@@ -1,0 +1,10 @@
+#!/bin/env bash
+
+if  [[ $1 = "-g" ]]; then
+    yt-dlp --downloader http:aria2c -i -f 22 -o '~/Data/movie/yt/%(title)s-%(id)s.%(ext)s' $2
+else
+    yt-dlp --downloader http:aria2c -i -f 18 -o '~/Data/movie/yt/%(title)s-%(id)s.%(ext)s' $1
+fi
+
+#yt-dlp --downloader http:aria2c -i -f 22 -o '~/Data/movie/yt/%(title)s-%(id)s.%(ext)s' $1
+#youtube-dl -f 22  -o '~/Media/Youtube/%(title)s-%(id)s.%(ext)s' $Video_link

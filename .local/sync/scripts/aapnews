@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -L 'https://www.aapathshala.com/' | pup 'div.notice-box' > /tmp/aap.html && brave /tmp/aap.html 'https://edgecoursebd.com/lessons/chemistry-1st-paper-2/'

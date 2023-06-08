@@ -1,0 +1,2 @@
+#!/bin/bash
+ yt-dlp --downloader http:aria2c -i -f 18 --yes-playlist $1

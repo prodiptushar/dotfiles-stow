@@ -1,0 +1,6 @@
+#!/bin/bash 
+echo "The url for the video "
+read R
+notify-send "Getting Ready" "We got the video.Wait for a Sec" ; nohup mpv --ytdl-format="[height<=720]" "$R" >/dev/null & 
+#notify-send "Getting Ready" "We got the video.Wait for a Sec" ; mpv --ytdl-format="[height<=720]" "$R" >/dev/null & 
+
