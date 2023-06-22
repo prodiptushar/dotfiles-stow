@@ -26,9 +26,11 @@
     fzf
     jq
     ripgrep
+    neovim
+    gimp-with-plugins
+    gimpPlugins.gmic
     chezmoi
     zsh
-    neovim
     watchman
   ];
   

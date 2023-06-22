@@ -60,7 +60,6 @@ fuse2
 fuzzel
 fzf-git
 gcc
-gimp
 git
 github-cli
 glfw-x11
@@ -82,7 +81,6 @@ hugo-extended-bin
 hunspell-en_us
 hybrid-bar
 hyprland-git
-ibus-avro-git
 img2pdf
 imv
 inotify-tools
@@ -215,6 +213,7 @@ river
 rofi
 shellcheck
 shfmt
+shotcut
 socat
 sof-firmware
 speech-dispatcher
@@ -240,6 +239,7 @@ ttf-fira-code
 ttf-fira-mono
 ttf-firacode-nerd
 ttf-font-awesome
+ttf-indic-otf
 ttf-jetbrains-mono
 ttf-joypixels
 ttf-nerd-fonts-symbols
@@ -268,8 +268,7 @@ wofi
 words
 xclip
 xdg-desktop-portal-gtk
-xdg-desktop-portal-hyprland-git
-xdg-desktop-portal-kde
+xdg-desktop-portal-hyprland
 xf86-video-nouveau
 xf86-video-vesa
 xfce4-power-manager

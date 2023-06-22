@@ -51,7 +51,8 @@ M.mason = {
 --         }),
 --   }
 -- end
-M.cmp = {
+M.cmp = { -- this is the lua table named cmp that overwrites the defoult config 
+  -- of the package  nvim-cmp and changes the default keybindings. 
          mapping = require 'cmp'.mapping.preset.insert({
            ["<C-k>"] = require 'cmp'.mapping.select_prev_item(),
            ["<C-j>"] = require 'cmp'.mapping.select_next_item(),

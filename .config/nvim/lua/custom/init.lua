@@ -6,4 +6,5 @@
 --   command = "tabdo wincmd =",
 -- })
 -- 
--- require 'nvim-treesitter.install'.compilers = { 'clang' }
+-- require 'nvim-treesitter.install'.prefer_git = false
+-- require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }

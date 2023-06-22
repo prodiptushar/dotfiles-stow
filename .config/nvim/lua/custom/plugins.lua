@@ -38,8 +38,9 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
-  {
+  { -- use the plugin name to attach configuration options.
     "hrsh7th/nvim-cmp",
+    -- here cmp is a table that we defined in config/overrides.lua file.
     opts = overrides.cmp,
   },
 
