@@ -9,7 +9,6 @@ exec-once = wl-clipboard-history -t
 exec-once = foot --server
 exec-once = brave
 exec-once = emacsclient --alternate-editor= -c
-exec-once = waybar
 # exec = swaybg -m fit -i ~/wallpapers/0LVW0xHbeWd7NLYfU_1300x700.jpg
 
 # █ █▄░█ █▀█ █░█ ▀█▀
@@ -191,7 +190,7 @@ binde=, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 # Dmenu submap
 bind = SUPER, D, submap, dmenu
 submap = dmenu
-bind = ,A,exec,fuzzel
+bind = ,A,exec,tofi-drun
 bind = ,A,submap,reset
 bind = ,E,exec,~/.local/sync/scripts/dmoji
 bind = ,E,submap,reset

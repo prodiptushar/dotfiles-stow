@@ -43,7 +43,7 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
 zsh_add_plugin "kutsan/zsh-system-clipboard"
 zsh_add_plugin "Aloxaf/fzf-tab"
-# zsh_add_plugin "zsh-users/zsh-completions"
+zsh_add_plugin "zsh-users/zsh-completions"
 
 
 # zsh_add_completion "esc/conda-zsh-completion" false

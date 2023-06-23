@@ -24,7 +24,12 @@ window#waybar {
     border-bottom: 3px solid transparent;
 }
 
-#workspaces button.focused {
+/* #workspaces button.focused { */
+/*     background: #4c566a; */
+/*     border-bottom: 3px solid #e5e9f0; */
+/* } */
+/**/
+#workspaces button.active {
     background: #4c566a;
     border-bottom: 3px solid #e5e9f0;
 }

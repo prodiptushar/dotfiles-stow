@@ -9,8 +9,6 @@ PS1='[\u@\h \W]\$ '
 
 #[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-export EDITOR='/usr/bin/nvim'
-export VISUAL='/usr/bin/nvim'
 
 PATH="/var/lib/snapd/snap/bin:/var/lib/snapd/snap/bin:/home/prodip/.zplug/repos/zplug/zplug/bin:/home/prodip/.zplug/bin:/home/prodip/.local/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/home/prodip/.fzf/bin:/home/prodip/.local/sync/scripts"
 
@@ -29,8 +27,3 @@ if [ -n "$GUIX_ENVIRONMENT" ]; then
 fi
 
 
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-# End Nix
