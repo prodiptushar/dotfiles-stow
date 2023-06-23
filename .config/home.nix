@@ -20,7 +20,6 @@
   #
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
-  # changes in each release.
 
   programs.waybar={
     enable = true;
@@ -43,6 +42,7 @@
     emacs
     eww-wayland
     ctpv
+    cmake
     fd
     jq
     firefox
@@ -58,6 +58,7 @@
     neovim
     foot
     noto-fonts-emoji
+    nnn
     (nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro"]; })
     kitty
     brave
