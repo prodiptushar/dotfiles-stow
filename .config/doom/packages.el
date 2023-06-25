@@ -58,3 +58,4 @@
 (package! evil-snipe :disable t)
 (package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
 (package! impatient-mode)
+(package! mu4e-alert :disable t)

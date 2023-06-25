@@ -23,19 +23,37 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+    networking.networkmanager.enable = true;
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
- nix = {
-  package = pkgs.nixFlakes;
-  extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
-}; 
-
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+      '';
+  }; 
+  programs.msmtp = {
+    enable = true;
+    accounts.default = {
+      host = "smtp.gmail.com";
+      from = "prodiptushar01@gmail.com";
+      user = "prodiptushar01@gmail.com";
+      password = "bmladlokwpcpogbk";
+    };
+  };
   users.defaultUserShell = pkgs.zsh;
   users.users.prodip.shell = pkgs.zsh;
-
+  
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      "*/5 * * * *      prodip    rsync -av /etc/nixos /home/prodip/.local/dotfiles/.local/sync/files/"
+      "*/5 * * * *      prodip    rsync -av /home/prodip/.config/home-manager /home/prodip/.local/dotfiles/.local/sync/files/"
+      "*/20 * * * *     prodip    rclone copy /home/prodip/Sync Sync:Sync"
+      
+    ];
+  };
+  
 security.rtkit.enable = true;
 services.pipewire = {
   enable = true;
@@ -94,6 +112,7 @@ services.pipewire = {
    git
    desktop-file-utils
    foot
+   libnotify
    brave
    curl
   ];

@@ -33,9 +33,16 @@
     # # "Hello, world!" when run.
     # pkgs.hello
     brave
+    mu
+    pam_gnupg
+    rclone
+    pass
+    isync
+    firefox
     foot
     mutt-wizard
     ueberzugpp
+    mako
     tmux
     file
     xdg-utils
@@ -45,7 +52,7 @@
     lazygit
     emacs29
     gtk3
-    pcmanfm
+    dolphin
     nnn
     ctpv
     fd
@@ -120,6 +127,7 @@
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     # EDITOR = "emacs";
+    # Test Cron
   };
   fonts.fontconfig.enable = true;
   programs.bat.enable = true;

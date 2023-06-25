@@ -186,6 +186,7 @@
       mu4e-index-lazy-check t
       mu4e-get-mail-command "mbsync -qa"
       mu4e-update-interval 300
+      mu4e-maildir "~/.local/share/mail/prodiptushar01@gmail.com/"
       )
 (setq +mu4e-gmail-accounts '(("prodiptushar01@gmail.com" . "/prodip")))
 (setq smtpmail-stream-type 'starttls)
@@ -193,6 +194,7 @@
 (setq smtpmail-smtp-server "smtp.gmail.com")
 (setq smtpmail-smtp-service 587)
 (setq smtpmail-debug-info t)
+(add-to-list 'load-path "/home/prodip/.config/emacs/modules/email/mu4e/")
 ;; (setq auth-sources '(password-store))
 (setq auth-source-debug t)
 (setq auth-source-do-cache nil)
@@ -268,7 +270,7 @@
 ;; elfeed
 (setq rmh-elfeed-org-files (list "~/Document/org/elfeed.org"))
 (after! elfeed
-  (setq elfeed-curl-program-name "/usr/bin/curl")
+  (setq elfeed-curl-program-name "curl")
   (setq elfeed-search-filter "@1-month-ago"))
 (add-hook! 'elfeed-search-mode-hook #'elfeed-update)
 ;; elfeed
