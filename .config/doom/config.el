@@ -22,7 +22,7 @@
 ;; accept. For example:
 ;;
 
-(setq doom-font (font-spec :family "Source Code Pro" :size 14 :weight 'semi-light)
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 14 :weight 'regular)
      doom-unicode-font (font-spec :family "Noto Color Emoji"))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
