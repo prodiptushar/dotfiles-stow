@@ -6,32 +6,35 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernel.sysctl = { "vm.swappiness" = 10;};
+  boot.kernel.sysctl = { "vm.swappiness" = 10; };
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
+  # networking.wireless.userControlled.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-    networking.networkmanager.enable = true;
+  networking.networkmanager.enable = true;
+
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
-      '';
-  }; 
+    '';
+  };
   programs.msmtp = {
     enable = true;
     accounts.default = {
@@ -43,26 +46,26 @@
   };
   users.defaultUserShell = pkgs.zsh;
   users.users.prodip.shell = pkgs.zsh;
-  
+
   services.cron = {
     enable = true;
     systemCronJobs = [
       "*/5 * * * *      prodip    rsync -av /etc/nixos /home/prodip/.local/dotfiles/.local/sync/files/"
       "*/5 * * * *      prodip    rsync -av /home/prodip/.config/home-manager /home/prodip/.local/dotfiles/.local/sync/files/"
       "*/20 * * * *     prodip    rclone copy /home/prodip/Sync Sync:Sync"
-      
+
     ];
   };
-  
-security.rtkit.enable = true;
-services.pipewire = {
-  enable = true;
-  alsa.enable = true;
-  alsa.support32Bit = true;
-  pulse.enable = true;
-  # If you want to use JACK applications, uncomment this
-  #jack.enable = true;
-};
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+  };
 
 
 
@@ -101,25 +104,28 @@ services.pipewire = {
     ];
   };
 
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   wget
-   git
-   desktop-file-utils
-   foot
-   libnotify
-   brave
-   curl
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    git
+    desktop-file-utils
+    foot
+    libnotify
+    brave
+    curl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
+
+  services.pcscd.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;

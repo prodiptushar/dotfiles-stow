@@ -294,7 +294,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font or prioritized list of fonts. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
-   dotspacemacs-default-font '("SourceCodePro Nerd Font Mono"
+   dotspacemacs-default-font '("FiraCode Nerd Font"
                                :size 10.0
                                :weight normal
                                :width normal)
@@ -671,6 +671,7 @@ before packages are loaded."
   (spacemacs/set-leader-keys "SPC" 'projectile-find-file)
   (setq lsp-ui-doc-position 'at-point)
   (setq org-directory "~/Document/org/")
+  (setq org-roam-directory "~/Document/org/org-notes/")
 
   (setq company-ddabbrev-code-everywhere t)
   (setq company-dabbrev-code-modes t)

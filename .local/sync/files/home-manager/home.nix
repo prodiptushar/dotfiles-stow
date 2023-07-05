@@ -13,46 +13,57 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
-  programs.waybar={
+  programs.waybar = {
     enable = true;
     package = pkgs.waybar.overrideAttrs (oa: {
-        mesonFlags = (oa.mesonFlags or  []) ++ [ "-Dexperimental=true" ];
-        patches = (oa.patches or []) ++ [
+      mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
+      patches = (oa.patches or [ ]) ++ [
         (pkgs.fetchpatch {
-         name = "fix waybar hyprctl";
-         url = "https://aur.archlinux.org/cgit/aur.git/plain/hyprctl.patch?h=waybar-hyprland-git";
-         sha256 = "sha256-pY3+9Dhi61Jo2cPnBdmn3NUTSA8bAbtgsk2ooj4y7aQ=";
-         })
-        ];
-        });};
+          name = "fix waybar hyprctl";
+          url = "https://aur.archlinux.org/cgit/aur.git/plain/hyprctl.patch?h=waybar-hyprland-git";
+          sha256 = "sha256-pY3+9Dhi61Jo2cPnBdmn3NUTSA8bAbtgsk2ooj4y7aQ=";
+        })
+      ];
+    });
+  };
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  
+
   home.packages = with pkgs;[
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
     brave
+    ytfzf
+    yt-dlp
+    gnumake
     mu
+    zathura
+    imv
+    nsxiv
     pam_gnupg
     rclone
     pass
+    cmake
     isync
     firefox
     foot
     mutt-wizard
     ueberzugpp
+    nodePackages.npm
+    python310Packages.pip
     mako
     tmux
     file
     xdg-utils
     fzf
     mpv
+    ffmpeg
+    aria2
     lf
     lazygit
-    emacs29
+    emacs29-pgtk
     gtk3
-    dolphin
     nnn
     ctpv
     fd
@@ -66,17 +77,17 @@
     fuzzel
     gcc
     stow
-    ani-cli
     neovim
     noto-fonts-emoji
-    (nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro"]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro" ]; })
     kitty
     gimp-with-plugins
     gimpPlugins.gmic
-    zsh
     zoxide
     wl-clipboard
-
+    ispell
+    sqlite
+    wordnet
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -92,7 +103,7 @@
   ];
   programs.git = {
     enable = true;
-    userName  = "prodiptushar";
+    userName = "prodiptushar";
     userEmail = "prodiptushar01@gmail.com";
   };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -109,10 +120,11 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-  
-  xdg.enable=true;
-  xdg.mime.enable=true;
-  targets.genericLinux.enable=true; 
+
+
+  xdg.enable = true;
+  xdg.mime.enable = true;
+  targets.genericLinux.enable = true;
 
 
   # You can also manage environment variables but you will have to manually

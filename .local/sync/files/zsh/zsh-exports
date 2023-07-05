@@ -13,7 +13,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 eval "$(zoxide init zsh)"
 # export XDG_DATA_DIRS="/home/prodip/.local/share/:/home/prodip/.nix-profile/share:$XDG_DATA_DIRS"
 # eval "`pip completion --zsh`"
-export PATH=$HOME/.local/bin/:$HOME/.local/sync/scripts/:$HOME/.config/emacs/bin/:$HOME/.programs/bin/:$PATH
+export PATH=$HOME/.local/bin/:$HOME/.local/sync/scripts/:$HOME/.config/emacs/bin/:$PATH
 export VISUAL='nvim'
 export EDITOR='nvim'
 export _ZO_EXCLUDE_DIRS=$HOME/Data/Phone/Android/data/*

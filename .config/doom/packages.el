@@ -50,6 +50,7 @@
 ;(unpin! t)
 
 (unpin! org-roam)
+(unpin! web-mode)
 (package! org-roam-ui)
 (package! zoxide)
 (package! key-chord)
@@ -59,3 +60,5 @@
 (package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
 (package! impatient-mode)
 (package! mu4e-alert :disable t)
+(package! spacemacs-theme)
+(package! company-ctags)

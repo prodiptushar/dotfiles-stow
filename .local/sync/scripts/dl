@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/sh
 
 if  [[ $1 = "-g" ]]; then
     yt-dlp --downloader http:aria2c -i -f 22 -o '~/Data/movie/yt/%(title)s-%(id)s.%(ext)s' $2

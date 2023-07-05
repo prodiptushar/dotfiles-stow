@@ -1115,7 +1115,7 @@ listen_on unix:/tmp/kitty
 #: Here, the key name for the A key is 0x61 and you can use it with::
 
 #:     map ctrl+0x61 something
-map ctrl+shift+enter new_window_with_cwd
+
 #: to map ctrl+a to something.
 
 #: You can use the special action no_op to unmap a keyboard shortcut
@@ -1467,9 +1467,3 @@ map ctrl+shift+enter new_window_with_cwd
 #: }}}
 
 #: }}}
-
-
-# BEGIN_KITTY_THEME
-# Spacemacs
-include current-theme.conf
-# END_KITTY_THEME

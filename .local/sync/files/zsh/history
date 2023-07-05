@@ -1,0 +1,2149 @@
+ls
+clear
+ls
+nix-shell '<home-manager>' -A install
+nvim .config/zsh/zsh-exports
+clear
+ls
+nvim .config/zsh/zsh-exports
+clear
+ls
+nvim .config/home-manager/home.nix
+home-manager switch
+fzf
+nvim .config/home-manager/home.nix
+home-manager switch
+source ~/.zshrc
+sudo nvim /etc/nixos/configuration.nix
+nvim .config/home-manager/home.nix
+home-manager switch
+clear
+ls
+clear
+clear
+ls
+clear
+ls
+nix-shell -p neofetch
+clear
+ls
+neofetch
+clear
+neofetch
+clear
+nvim .config/hypr
+systemctl hybrid-sleep
+clear
+systemctl suspend
+cd .config/nix
+ls
+nvim nix.conf
+cd
+clear
+snvim /etc/nixos/configuration.nix
+ls
+snvim /etc/nixos/hardware-configuration.nix
+acpi
+clear
+z home
+cd home
+ls
+cd .config/home-manager
+ls
+nvim home.nix
+cd
+clear
+home-manager switch
+ls
+cd .config/nixpkgs
+ls
+nvim home.nix
+which fzf
+clear
+acpi
+man zoxide
+clear
+ls
+clear
+ls ~/.config
+ls ~/.config | grep tofi
+clear
+..
+nvim home-manager/home.nix
+home-manager switch
+clear
+ls
+clear
+ls
+clear
+ls
+exa
+clear
+exa
+clear
+ls
+hyprctl reload
+clear
+ls
+cd home-manager
+nvim home.nix
+home-manager switch
+ls
+clear
+waybar
+clear
+ls
+hyprctl reload
+clear
+ls
+clear
+cd .config/hypr/
+nvim hyprland.conf
+clear
+cd
+clear
+.local/sync/scripts/waybar-launch
+nvim .local/sync/scripts/waybar-launch
+.local/sync/scripts/waybar-launch
+nix-shell -p xprop
+ping google.com
+nix-shell -p xprops
+clea
+clear
+hyprctl reload
+rm .config/nvim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim\
+
+clear
+ls
+nvim
+clear
+z dot
+which z
+cd .local/dotfiles
+ls
+stow .
+nvim .config/home-manager/home.nix
+home-manager switch
+nix search clang
+nix search gcc
+nvim .config/home-manager/home.nix
+home-manager switch
+systemctl --user restart xdg-desktop-portal-hyprland.service
+systemctl restart xdg-desktop-portal-hyprland.service
+sudo nvim /etc/nixos/configuration.nix
+sudo nixos-rebuild
+sudo nixos-rebuild switch
+time
+date
+lsblk
+snvim /etc/nixos/hardware-configuration.nix
+sudo nixos-rebuild switch
+blkid
+sudo blkid
+clear
+ls
+clear
+cat /etc/fstab
+snvim /etc/nixos/hardware-configuration.nix
+sudo blkid
+ls
+mkdir ~/Data
+sudo nixos-rebuild switch
+which update
+ls
+systemctl --user restart xdg-desktop-portal-hyprland.service
+systemctl --user status xdg-desktop-portal-hyprland.service
+journalctl --user -xeu xdg-desktop-portal-hyprland.service
+clear
+ls
+cd Data
+ls
+r
+mpv
+clear
+ls
+home-manager switch
+systemctl --user status pipewire-pulse.service
+systemctl --user status pipewire.service
+clear
+reboot
+systemctl --user status xdg-desktop-portal-hyprland.service
+clear
+home-manager switch
+cd .local/dotfiles
+ls
+man stow
+stow -t /home/prodip .
+rm -rf ~/.config/nvim/lua/custom
+stow -t /home/prodip .
+nvim
+clear
+ls
+..
+cd
+clear
+cd
+clear
+ls
+nvim .config/home-manager/home.nix
+nix-shell -p pulsemixer
+clear
+ls
+clar
+clear
+ping google.com
+mpv
+clear
+pg
+ping facebook.com
+ping google.com
+htop
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+pg
+ping google.com
+clear
+date
+ls
+clear
+s
+ls
+clear
+ls
+clear
+ls -la
+clear
+ls
+clear
+s
+z home
+z home-m
+cd .config/home-manager
+nvim home.nix
+home-manager switch
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+tmux
+home-manager switch
+ani-cli -h
+clear
+ls
+lf
+z home
+ls
+nvim home.nix
+z font
+cd .config/fontconfig
+ls
+nvim fonts.conf
+neofetch
+nix-shell -p neofetch
+df -h
+home-manager switch
+fc-list
+fc-list | rg Fira
+nvim home.nix
+home-manager switch
+nvim fonts.conf
+fc-cache -f
+nvim fonts.conf
+clear
+cd
+clear
+fc-list | rg noto
+cd
+clear
+tmux
+z hyrp
+z hypr
+ls
+nvim hyprland.conf
+clear
+hyprctl reload
+clear
+ls
+clear
+..
+ls
+..
+ls
+cd Data
+ls
+cd backup
+ls
+..
+ls
+..
+ls
+cd other
+mkcd other
+ls
+clear
+ls
+mkcd config
+git clone https://github.com/end-4/dots-hyprland.git
+z home-m
+ls
+nvim home.nix
+mv dots-hyprland/.config/eww ~/.config/
+z ~ eww
+z .config eww
+z config
+cd eww
+ls
+eww
+nvim home.nix
+home-manager switch
+cd
+clear
+nvim home.nix
+home-manager switch
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.D
+acpi
+emacs
+rm -rf .emacs.d
+mv .emacs.D .emacs.d
+emacs
+which emacs
+cd ~/.nix-profile
+ls
+lf
+clear
+ls
+cd
+clear
+time
+date
+acpi
+echo $XDG_DATA_DIRS
+update-desktop-database
+nvim .profile
+nvim .zshprofile
+which sh
+z home-m
+ls
+nvim home.nix
+nvim ~/.zshprofile
+ls ~/.nix-profile
+ls
+home-manager switch
+nvim /etc/nixos/configuration.nix
+snvim /etc/nixos/configuration.nix
+nvim home.nix
+home-manager switch
+ping google.com
+clear
+mv ~/.zshrc ~/.zshrc.bak
+ping google.com
+home-manager switch
+nvim ~/.zshrc
+nvim home.nix
+home-manager switch
+nvim home.nix
+home-manager switch
+source ~/.zshrc
+nvim  ~/.zshrc.bak
+ls
+nvim ~/.zshrc
+ls
+clear
+ls
+nvim ~/.config/zsh/plugins
+nvim ~/.config/zsh/zsh-exports
+nvim ~/.config/zsh/zsh-functions
+nvim ~/.config/zsh/zsh-usr
+nvim ~/.config/zsh/.zshrc
+ls
+clear
+ls
+ls
+home-manager switch
+emacs
+clear
+ls
+reboot
+ls
+r
+mpv
+lf
+z lf
+cd .config/lf
+ls
+nvim lfrc
+ls
+z data
+ls
+cd Phone/Android/media/anisong
+ls
+mpv \[AMV\]Kimi\ no\ na\ wa-\ Nandemonaiya.mp4
+z lf
+nvim lfrc
+z and
+z data
+cd Phone
+ls
+nvim .zshrc
+ls
+cd .config/zsh/
+ls
+nvim zsh-exports
+nvim ~/.config/zsh/zsh-exports
+ls
+source ~/.zshrc
+clear
+ls
+bash
+clear
+which update
+clear
+waybar
+nvim ~/.config/hypr/hyprland.conf
+nvim ~/.config/waybar/config
+nvim ~/.config/waybar/style.css
+nvim ~/.config/waybar/config
+waybar
+clear
+hyprctl workspace
+hyprctl workspaces
+Hyprland workspaces
+Hyprland --help
+nvim .local/sync/scripts/waybar-launch
+clear
+nix-shell -p hollywood
+clear
+clear
+ls
+cd .config
+ls
+cd doom
+ls
+cd
+clear
+ls
+clear
+echo $XDG_DATA_DIRS
+nvim .config/zsh/zsh-exports
+clear
+ls
+update-desktop-database
+clear
+ls
+clear
+sl
+ls
+clear
+date
+mkcd code
+ls
+mkcd web
+ls
+htop
+bpytop
+z home-m
+ls
+nvim home.nix
+home-manager switch
+nvim home.nix
+home-manager switch
+btop
+clear
+btop\\
+
+clear
+pg
+cd
+clear
+ping google.com
+pkill emacs
+clear
+ls
+clear
+ls
+cd Data
+ls
+r
+file
+z lf
+ls
+nvim lfrc
+clear
+nnn
+z way
+cd ../waybar
+ls
+nvim config
+ls
+nvim config
+man waybar
+nvim config
+cd
+clear
+ls
+clear
+ls
+z .config home
+ls
+nvim home.nix
+home-manager switch
+ping google.com
+nvim home.nix
+clear
+ls
+waybar
+clear
+nvim home.nix
+home-manager switch
+waybar
+clear
+nvim home.nix
+cat home.nix
+home-manager switch
+clear
+waybar
+clear
+cd
+clear
+z .config home
+nvim home.nix
+waybar
+pkill waybar
+clear
+ls
+cd
+clear
+ls
+z dot
+ls
+pwd
+ls
+g
+git status
+git add .
+ls
+nvim 
+home-manager switch
+df -h
+clear
+g
+nvim 
+home-manager switch
+g
+cd
+clear
+cd
+clear
+ping google.com
+clear
+nix help
+clear
+ping google.com
+r
+lfcd
+r
+ls
+clear
+nvim
+lf
+z zsh
+ls
+z home-m
+ls
+nvim home.nix
+ssh-keygen -t rsa\
+
+cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_rsa.pub | wl-copy
+ssh -T git@github.com
+z dot
+ls
+g
+git remote set-url origin git@github.com:prodiptushar/dotfiles-stow.git
+git push
+z zsh
+home-manager switch
+nvim home.nix
+clear
+ls
+home-manager switch
+nvim home.nix
+home-manager switch
+fc-list | fzf
+fc-list | rg "source code"
+fc-list | rg -i "source code"
+fc-list | rg -i "sourcecodepro"
+fc-list | rg  "sourcecodepro"
+fc-list | rg -i "sourcecodepro"
+fc-list | rg -i "sourcecode:
+fc-list | rg -i "sourcecode"
+fc-list | fzf
+ls
+nvim home.nix
+home-manager switch
+nvim home.nix
+home-manager switch
+nix run home-manager/master -- init --switch
+ls
+mv home.nix
+mv home.nix ..
+nix run home-manager/master -- init --switch
+nvim flake.nix
+home-manager switch
+nix run home-manager/master -- init --switch
+ls a
+ls -a
+nix-channel --list
+nix-channel --add https://nixos.org/channels/nixos-unstable nixos\
+
+nixos-rebuild switch --upgrade
+nnn
+n
+ping google.com
+sudo nixos-rebuild switch --upgrade
+pg
+ping google.com
+z data
+ls
+clear
+ls
+lf
+ping
+ping google.com
+ls
+cd movie/anime/fma
+ls
+mpv fullmetal-alchemist-brotherhood-episode-30-sub.mp4
+mpv fullmetal-alchemist-brotherhood-episode-31-sub.mp4
+ping google.com
+z fma
+ls
+z back
+ls
+cd code/web/html5/servay
+ls
+nvim 
+z data
+cd movie/yt/tech
+ls
+mpv Creating\ a\ better\ todo\ app\ -\ the\ HTML\ and\ CSS-IhmSidOJSeE.mp4
+pg
+z .config
+ls
+cd mpv
+ls
+nvim mpv.conf
+nvim script-opts
+cd script-opts
+ls
+htop
+snvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch --upgrade
+htop
+cd Data/backup/code/web/html5/
+..
+ls
+cd ..
+ls
+cd javascript
+ls
+cd test
+ls
+..
+ls
+cd note
+ls
+nvim index.html
+snvim /etc/nixos/configuration.nix
+nix run home-manager/master -- init --switch\
+
+cd .config
+ls
+cd home-manager
+ls
+..
+ls
+nvim home-manager
+..
+cd .config
+rm home-manager
+nix run home-manager/master -- init --switch\
+
+mv Data/backup/Document ~
+cd Document
+ls
+cd org
+ls
+nvim notes.org
+ls
+cd home-manager
+which zoxide
+ls
+nvim home.nix
+cd ~/.local/dotfiles/.config/home-manager
+nvim home.nix
+ls
+..
+ls
+rm home-manager
+rm -rf home-manager
+cd
+ls
+nvim home.nix
+..
+ls
+nvim hypr/hyprland.conf
+nvim /proc/sys/vm/swappiness
+snvim /etc/sysctl.conf
+swapon --sow
+swapon --show
+snvim /etc/nixos/configuration.nix
+systemctl suspend
+ls
+clear
+sudo nixos-rebuild switch
+df -h
+nvim /proc/sys/vm/swappiness
+home-manager switch
+nvim todo.md
+lf
+, lf
+nix-shell -p comma
+htop
+nvim home.nix
+home-manager switch
+date
+ls
+nvim flake.lock
+nvim flake.nix
+ls
+clear
+ls
+emacs  --version
+clear
+emacs
+ls
+lazygit
+cd .git
+ls
+z dot
+ls
+g
+git push
+ls
+git status
+cd
+clear
+htop
+clear
+ls
+btop
+htop
+clear
+ls
+hyprctl reload
+pkill emacs 
+ls
+clear
+z code
+ls
+cd web
+ls
+cd mr\ \&\ mrs\ creation
+ls
+nvim index.html
+ls
+..
+ls
+nix-shell -p  unzip
+z home-
+ls
+nvim flake.nix
+ls
+mv html food
+cd food
+s
+ls
+clear
+ls
+home-manager switch
+, lf
+nvim home.nix
+home-manager switch --flakes
+cd
+clear
+ls
+snvim /etc/nixos/configuration.nix
+ls
+brave index.html
+cd images
+ls
+cd ..
+ls
+cd js
+ls
+nvim bootstrap.bundle.js
+nvim bootstrap.bundle.js.map
+nvim bootstrap.js
+..
+ls
+touch shell.nix
+z .config
+ls
+cd home-manager
+ls
+nvim flake.nix
+nix run github:nix-community/nix-doom-emacs
+z home-
+ls
+nvim flake.nix
+home-manager switch --flakes
+home-manager switch --flakes .
+sudo nixos-rebuild switch .
+sudo nixos-rebuild switch --flake .
+sudo nixos-rebuild switch --flake 
+home-manager switch --flake
+home-manager switch --flake .
+home-manager switch --flake 
+ls
+..
+ls
+mkdir dotfiles
+cd dotfiles
+ls
+git init
+nix flake init
+ls
+cp ../home-manager/flake.nix .
+nvim flake.nix
+nix --version
+mv ./home.nix ../dotfiles/
+mv ./flake.nix ../dotfiles/flake.nix.old
+ls
+nvim todo.md
+nix run home-manager/release-23.05 -- init --switch\
+
+df -h
+ls
+nvim flake.nix
+nvim home.nix
+mv ../dotfiles/home.nix ./home.nix
+ls
+nvim home.nix
+home-manager switch --flake 
+home-manager switch 
+nvim home
+nvim home.nix
+ls
+nvim flake.nix
+ls
+cd ..
+ls
+cd home-manager
+s
+ls
+mv home.nix ../
+cd..
+cd ..
+ls
+nvim home.nix
+nix run home-manager/master -- init --switch
+ping google.com
+ls
+nvim flake.nix
+rm flake.nix home.nix fl.bac
+ls
+rm flake.lock
+nix run home-manager/master -- init --switch
+btop
+nix-shell -p btop
+clear
+df -h
+nix-env --list-generations
+ping google.com
+clear
+acpi
+nix-shell -p acpi
+ping google.com
+systemctl --user status networkManager.service
+systemctl --user status networkmanager
+ping google.com
+cd .config
+ls
+cd home-manager
+ls
+nvim home.nix
+nvim flake.nix
+nix run home-manager/master -- init --switch
+mv ../home.nix ./home.nix
+ls
+nvim todo.md
+nvim home.nix
+nvim todo.md
+home-manager switch 
+nvim .config/home-manager/flake.nix
+btop
+neofetch
+nix shell neofetch
+nix shell nixpkgs#neofetch
+home-manager switch --flake
+home-manager switch 
+home-manager --dry-run
+home-manager --dry-run switch
+ls ../ | rg emacs
+emacs --version
+acpi
+cd .emacs.d
+ls
+emacs
+home-manager --dry-run switch
+home-manager switch
+emacs
+pg
+ping google.com
+ls
+mv .emacs.d ~/other/config/spacemacs/
+ls ~/other/config/spacemacs/
+mv ~/other/config/doom ~/.config/emacs
+emacs
+which doom
+doom sync
+r
+z lf
+nvim lfrc
+r
+which mpv
+nvim lfrc
+r
+ls
+lf
+mv lfrc ll
+ls
+lf
+wget 'https://github.com/BrodieRobertson/dotfiles/raw/master/config/lf/lfrc'  > lfrc
+emacs
+doom build && doom sync
+ls
+r
+nvim lfrc
+ls
+nvim lfrc
+r
+nvim lfrc
+r
+nvim lfrc
+z home-
+ls
+nvim home.nix
+home-manager switch
+z hypr
+ls
+htop
+nvim hyprland.conf
+ls
+clear
+ls
+snvim /etc/nixos/configuration.nix
+htop
+ls
+sudo systemctl status networking
+sudo systemctl status network-setup.service
+systemctl status NetworkManager.service
+emacs -nw
+sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"\
+
+ls
+cd .config/nnn/plugins
+ls
+nnn
+n
+cd
+clear
+n
+z zsh
+ls
+nvim zsh-usr
+which nuke
+weather
+which weather
+mkdir ~/.local/bin
+cp ~/.config/nnn/plugins/nuke ~/.local/bin/
+f
+r
+n
+z mpv
+ls
+ls script-opts
+ls
+wget 'https://github.com/tomasklaen/uosc/releases/latest/download/uosc.zip'
+ls
+home-manager switch
+ls
+, unzip uosc.zip
+nix-index
+nix-shell -p unzip
+mpv ~/Data/movie/addmission/7\ Day\ Revision\ Plan\ _\ Medical\ Admission\ Preparation\ \[HFpgq7EwQvQ\].mp4
+mpv ~/Data/movie/addmission/Medical\ Admission\ Preparation\ A\ To\ Z\ \[JkKj5AWQinU\].mp4
+ls
+cd scripts
+ls
+wget 'https://github.com/po5/thumbfast/raw/master/thumbfast.lua'
+mpv ~/Data/movie/addmission/Medical\ Admission\ Preparation\ A\ To\ Z\ \[JkKj5AWQinU\].mp4
+mpv ~/Data/movie/addmission/So\ You\ Want\ to\ Be\ a\ PLASTIC\ SURGEON\ \[Ep.\ 4\].mp4
+mpv ~/Data/movie/addmission/MEDICAL\ COLLEGE\!\ MBBS\ ADMISSION\ TALES\ _\ PREPARATION\ HACKS\!\ \[-18cQi7Xbjo\].mp4
+, neofetch
+nix run 'nixpkgs#nix-index' --extra-experimental-features 'nix-command flakes'
+cd
+htop
+snvim /etc/nixos/configuration.nix
+htop
+emacs --debug-init
+nvim .config/doom/config.el
+emacs --debug-init
+nvim .config/doom/config.el
+fc-list | fzf
+pkill emacs
+emacs
+emacs --debug-init
+nvim .config/doom/config.el
+fc-list | fzf
+emacs --debug-init
+emacs
+htop
+ls
+clear
+htop
+ls
+clear
+ls
+clear
+z fuzzel
+cd .config/fuzzel
+ls
+nvim fuzzel.ini
+htop
+man fuzzel
+man fuzzel 5
+, neofetch
+z home-man
+ls
+nvim flake.nix
+home-manager switch
+..
+cd tofi
+nvim config
+z fuzzel
+ls
+man fuzzel 5
+man tofi
+cat ~/.config/tofi/config
+man fuzzel 5
+man fuzzel
+man tofi
+man tofi 5
+nvim fuzzel.ini
+ping google.com
+btop
+ping google.com
+htop
+ls
+nmtui
+systemctl restart NetworkManager.service
+nmtui
+clear
+ping google.com
+cd
+clear
+ls
+cd
+clkear
+cler
+clear
+man setsid
+z fma
+r
+ls
+z fma
+ls
+mpv fullmetal-alchemist-brotherhood-episode-31-sub.mp4
+z home-man
+nvim home.nix
+home-manager switch
+nvim home.nix
+home-manager switch
+r
+, neofetch
+..
+ls
+mv home-manager
+z dot
+ls
+cd .config/home-manager
+ls
+cd .config
+ls
+cd home-manager
+ls
+mv home-manager ~/.local/dotfiles/.config/
+..
+ls
+stow -t /home/prodip .
+home-manager --dry-run switch
+ls
+cd home-manager
+ls
+ls -la
+..
+ls
+home-manager --dry-run switch]
+home-manager --dry-run switch
+rm home-manager
+mv .config/home-manager  ~/.config/
+home-manager --dry-run switch
+df -h
+cd home-manager
+ls
+nvim flake.nix
+home-manager --dry-run switch
+home-manager switch
+pkill emacs
+doom build && doom sync
+htop
+emacs
+nvim home.nix
+home-manager switch
+ping google.com
+ls
+ls -la
+cd .local/sync
+ls
+cd file
+cd files
+ls
+rsync ~/.config/home-manager .
+ls
+rsync -av ~/.config/home-manager .
+ls
+ls home-manager
+ls
+rsync -av /etc/nixos .
+ls
+cd
+z dot
+g
+ls
+mw
+mw -a prodiptushar01@gmail.com
+gpg --full-generate-key
+nvim home.nix
+crontab -e
+nvim home.nix
+snvim /etc/nixos/configuration.nix
+z file
+ls
+rsync -av /etc/nixos .
+cd nixos
+ls
+..
+ls -a
+pwd
+sudo nixos-rebuild switch --flake 
+sudo nixos-rebuild switch
+home-manager switch
+, neofetch
+ls
+nvim home-manager/home.nix
+nvim home.nix
+systemctl status cron.service
+cd
+clear
+z fma
+r
+pcmanfm
+pg
+ls
+l
+which l
+ls
+ping google.com
+systemctl restart NetworkManager.service
+ping google.com
+z home
+ls
+nvim home.nix
+home-manager switch
+mw -a prodiptushar01@gmail.com
+pass init prodiptushar01@gmail.com
+nvim home.nix
+cd
+mkdir Sync
+mw -a prodiptushar01@gmail.com
+cd .config/mutt/accounts
+ls
+cp prodiptushar01@gmail.com.muttrc ../muttrc
+nvim ../muttrc
+ls
+mw -a prodiptushar01@gmail.com
+mw -Y
+nvim home.nix
+snvim /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+home-manager switch
+nvim home.nix
+z dot files
+ls
+cd .local/sync/files/home-manager
+ls
+nvim home.nix
+mw -Y
+pg
+, ftp
+systemctl restart NetworkManager.service
+home-manager switch
+btop
+nvim home.nix
+rclone ls Sync:Sync
+rclone copy /home/prodip/Sync Sync:Sync
+snvim /etc/nixos/configuration.nix
+, ftp 192.168.0.2:1579
+, ftp 192.168.0.2
+man ftp
+nix-shell ftp
+nix-shell -p ftp
+ping google.com
+mw -Y
+ls
+cd
+, notify-send hellow
+, notify hellow
+, danst hellow
+, dunst hellow
+, mako hello
+nix search mako
+nix search nixpkgs make
+nix search nixpkgs mako
+btop
+r
+z dot
+ls
+cd .config
+ls
+rm home.nix
+cd
+clear
+z home-
+nvim home.nix
+cd .config/emacs
+ls
+cd home.nix
+nvim home.nix
+home-manager switch
+z mail
+z share
+z local
+cd share
+ls
+ls home-manager
+cd mail/prodiptushar01@gmail.com
+ls
+..
+$ mu init --maildir ~/.mail --my-address email@example.com
+mu init --maildir ~/.local/share/mail/prodiptushar01@gmail.com --my-address prodiptushar01@gmail.com
+mu index
+source ~/.zshrc
+mako
+mako 
+notify-send 'hellow'
+snvim /etc/nixos/configuration.nix
+nix-env -iA libnotify
+nix-env -iA nixpkgs.libnotify
+, libnotify
+ls
+find / -type d -iname '*mu4e*' 2> /dev/null
+find /home/prodip/.config/emacs -type d -iname '*mu4e*' 2> /dev/null
+r
+doom install
+find ~/.nix-profile -type d -iname '*mu4e*' 2> /dev/null
+find /nix/store -type d -iname '*mu4e*' 2> /dev/null
+mbsync -qa
+ls
+cd
+clear
+cd
+z dot
+ls
+g
+ls
+git push
+ls
+nvim README.md
+git add .
+git status
+git commit -m "test"
+g
+cd
+z home-
+ls
+nvim home.nix
+home-manager switch
+btop
+df -h
+nvim ~/.config/home-manager/home.nix
+z dot
+ls
+stow -t /home/prodip .
+pkill emacs
+doom build && doom sync
+cd
+clear
+btop
+htop
+emacs -nw
+z home
+ls
+nvim home.nix
+home-manager switch
+cd
+clear
+, ftp
+htop
+btop
+nix-shell -p ftp
+nvim home.nix
+z home
+nvim home.nix
+home-manager switch
+nvim home.nix
+cd
+clear
+z home-
+ls
+nvim home.nix
+home-manager switch
+nvim home.nix
+cd
+f
+man fzf
+ls
+cd other
+ls
+cd cofig
+cd config
+ls
+fzf
+fzf -m
+cd
+cd .config
+f
+cd nixpkgs
+ls
+nvim home.nix
+..
+rm nixpkgs
+ls
+home-manager switch
+z dot
+f
+man fd
+fd -t d nixpkgs
+man fd
+fd -H -t d nixpkgs
+fd -H -t d nixpkgs -x rm
+fd -H -t d nixpkgs -x rm -rf
+fd -H -t d nixpkgs 
+cd
+clear
+z home-
+nvim home.nix
+home-manager switch
+nix-env -iA libtool
+nix-env -iA nixpkgs.libtool
+nix-env -iA nixos.libtool
+ls
+clear
+ls
+nix-shell -p hstr
+ls
+nix-shell -p hstr man
+nix shell hstr
+nix-shell -p hstr
+ls
+clear
+z python
+z java
+ls
+..
+ls
+cd python
+ls
+cd test
+ls
+mkcd nixenv
+nvim shell.nix
+ls
+..
+ls
+z html
+ls
+cd servay
+ls
+python -m http.server
+ls
+clear
+z fma
+ls
+f
+which f
+nuke fullmetal-alchemist-brotherhood-episode-12-sub.mp4
+fzf --find "enter:execute(mpv {})"
+fzf --bind "enter:execute(mpv {})"
+nix-shell 
+nvim shell.nix
+ls
+ls -a
+nix-shell
+..
+l
+..
+ls
+cd javascript
+ls
+cd test
+ls
+cd todo
+ls
+which
+which f
+pg
+systemctl restart NetworkManager.service
+ls
+clear
+ls
+pwd
+nix develop "github:DeterminateSystems/zero-to-nix#javascript"\
+
+ls
+ls -a
+z nixen
+ls
+nix-shell
+ls
+cd
+clear
+ls
+z home
+ls
+nvim home.nix
+home-manager switch
+z todo
+ls
+systemctl restart NetworkManager.service
+z fma
+r
+n
+ls
+nvim ~/.local/sync/scripts/nuke
+nvim ~/.local/bin/nuke
+nuke fullmetal-alchemist-brotherhood-episode-12-sub.mp4
+ls
+clear
+nix-env -iA nixos.nodePackages.http-server
+ls
+http-server .
+ls
+nvim index.html
+ls
+nix-env uninstall nixos.nodePackages.http-server
+nix-env --help
+nix-env --uninstall nixos.nodePackages.http-server
+nix-env --help
+nix-env --uninstall -A nixos.nodePackages.http-server
+nix-env --help
+ls
+cd
+clelar
+clear
+ls
+clear
+cd
+clear
+ls
+cd Syncd
+ls -a
+ls
+echo $(fuzzel)
+man fuzzel
+echo $x | fuzzel
+ls | fuzzel
+ls
+man fuzzel
+echo $x | fuzzel -d
+echo $(fuzzel -d)
+ls | fuzzel -d
+z sync
+ls
+cd files
+ls
+nvim emoji
+emacsclient -c emoji
+cd
+clear
+l
+ls
+clear
+ls
+nvim 
+ls
+clea
+clear
+ls
+z nvim
+ls
+cd .config/nvim/lua/custom/configs
+ls
+nvim lspconfig.lua
+ls
+nvim null-ls.lua
+..
+ls
+nvim plugins.lua
+ls
+nvim README.md
+nvim highlights.lua
+nvim configs/overrides.lua
+ls
+z html
+ls
+nvim servay
+z food
+ls
+pwd
+nvim index.html
+nix-env --uninstall http-server
+nix-env -iA nixos.nodePackages.live-server
+nvim index.html
+z nvim
+cd .config/nvim
+ls
+nvim 
+z custom
+ls
+nvim configs/overrides.lua
+ls
+nvim index.html
+nvim configs/overrides.lua
+nvim index.html
+systemctl restart NetworkManager.service
+ifconfig
+snvim /etc/nixos/configuration.nix
+ls
+nvim configs/lspconfig.lua
+ls
+nvim js/bootstrap.bundle.js
+..
+.
+..
+ls
+rm nvim
+rm -rf nvim astro
+z dot
+ls
+cd .config
+ls
+cd astro
+ls
+cd lua
+ls
+rm -rf nvim 
+ls
+..
+ls
+.
+..
+rm -rf nvim 
+ls
+cd ~/.config
+git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim\
+nvim\
+
+mv astro nvim
+ls
+..
+stow -t /home/prodip .
+ls
+cd nvim
+ls
+cd lua
+ls
+cd user
+ls
+pwd
+nvim mappings.lua
+ls
+nvim init.lua
+ls
+nvim plugins
+..
+ls
+ls -la
+ls
+cd user
+ls
+nvim mappings.lua
+ls
+nvim plugins/user.lua
+ls
+nvim plugins/core.lua
+ls
+nvim plugins.lua
+ls
+..
+ls
+nvim astronvim/mappings.lua
+cd
+clear
+ls
+nvim index.html
+ls
+clear
+nvim 
+nix-env -iA nixos.cargo
+nix-channel --list
+sudo nix-channel --list
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos\
+
+sudo nix-channel --list
+nvim
+ping google.com
+systemctl restart NetworkManager.service
+ping google.com
+nvim
+ls
+clear
+ls
+systemctl restart NetworkManager.service
+pstree
+dl 'https://www.youtube.com/watch?v=R6eCdhWOOog'
+nvim /home/prodip/.local/sync/scripts//dl
+nvim .config/home-manager/home.nix
+home-manager switch
+dl 'https://www.youtube.com/watch?v=R6eCdhWOOog'
+dl 'https://www.youtube.com/watch?v=Kt2tf4W-1YA'
+pg
+systemctl restart NetworkManager.service
+z fma
+ls
+sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"\
+
+ping google.com
+nmtui
+ls
+ping google.com
+systemctl restart NetworkManager.service
+ls
+r
+sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"\
+
+ping google.com
+clear
+ls
+cd
+clear
+rm fullmetal-alchemist-brotherhood-episode-33-sub.mp4
+ani-cli -U
+nvim 
+z .local
+ls
+cd bin
+ls
+wget 'https://github.com/pystardust/ani-cli/raw/master/ani-cli'
+ls
+chmod +x ani-cli
+ls
+which ani-cli
+cd
+nix-env --uninstall ani-cli
+which ani-cli
+ani-cli -d -q 480 full metal alchemist brotherhood
+nvim
+home-manager switch
+ani-cli -d -q 480 full metal alchemist brotherhood
+nvim 
+home-manager switch
+nvim 
+home-manager switch
+df -h
+ani-cli -d -q 480 full metal alchemist brotherhood
+mpv fullmetal-alchemist-brotherhood-episode-33-sub.mp4
+ls
+clear
+r
+cd
+clare
+clear
+r
+ani-cli -d -q 480 -e 51-55 full metal alchemist brotherhood 
+ls
+rm fullmetal-alchemist-brotherhood-episode-51-sub.mp4 fullmetal-alchemist-brotherhood-episode-51-sub.mp4.aria2
+systemctl restart NetworkManager.service
+ani-cli -d -q 480 -e 51-55 full metal alchemist brotherhood 
+snvim /etc/nixos/configuration.nix
+home-manager switch
+sudo nixos-rebuild switch
+ls
+ls
+clear
+cd
+clewar
+clear
+ls
+clear
+ytfzf -t bugs writer
+ls
+nvim .config/ytfzf/conf.sh
+ls
+ytfzf -t bugswriter
+ls
+clear
+, xprop
+cd
+clear
+z fma
+ls
+r
+ls
+z code
+ls
+ped
+pwd
+ls
+cd web/html5
+ls
+cd servay
+ls
+nvim style.css index.html script.js
+ls
+systemctl restart NetworkManager.service
+ls
+clear
+dc
+cd
+clear
+ls
+clear
+ls
+ani-cli -q 480 vinland saga 2nd season
+ani-cli -q 480 vinland saga 2
+nix-env -iA nixos.pinentry
+snvim /etc/nixos/configuration.nix
+mw -Y
+sudo nixos-rebuild switch
+ls
+htop
+df -h
+ls
+clear
+htop
+mw -Y
+ls
+z prodip
+ls
+cd \[Gmail\]
+ls
+rm sent
+ls
+r
+cd
+clear
+ls
+ytfzf -t bugswriter emacs why
+systemctl restart NetworkManager.service
+ytfzf -t bugswriter emacs why
+man ytfzf
+ytfzf -t bugswriter emacs why
+systemctl restart NetworkManager.service
+curl -d "text" qrcode.show
+curl -d $(wl-paste) qrcode.show
+wl-paste
+imv ~/Data/backup/wallpapers/0LVW0xHbeWd7NLYfU_1300x700.jpg
+man imv
+zsdh
+zsh
+ls
+clear
+clear
+cd
+clear
+z hypr
+ls
+nvim hyprland.conf
+cd
+clear
+ls
+clear
+emacs -Q
+z hypr
+nvim hyprland.conf
+cd
+clear
+ls
+systemctl restart NetworkManager.service
+htop
+btop
+clear
+echo  $MOZ_ENABLE_WAYLAND
+which $MOZ_ENABLE_WAYLAND
+clear
+ls
+pg
+firefox flex-wrap.html
+ls
+fire
+firefox flex-wrap.html
+htop
+z fma
+r
+clear
+cd
+clear
+ls
+clear
+r
+cd
+clear
+ls
+htop
+clear
+ls
+clear
+ls
+clear
+echo $DISPLAY
+z fma
+f
+man nuke
+nuke -h
+which nuke
+nvim $(which nuke)
+fzf --bind "enter:execute(xdg-open {})"
+fzf --bind "enter:execute(setsid -f xdg-open {})"
+nvim 
+z zsh
+f
+whichf
+which f
+ls
+clear
+ls
+source ~/.zshrc
+which f
+z zsh
+f
+which f
+f
+clear
+ls
+clear
+ls
+nvim $(which nuke)
+nuke ~/Data/backup/Camera/images\ \(1\).jpeg
+nvim ~/.local/bin/scope
+ls
+nvim scope
+rm scope
+nvim scope.sh
+nvim $(which nuke)
+nuke fullmetal-alchemist-brotherhood-episode-12-sub.mp4
+which sh
+which env
+nvim $(which nuke)
+nvim scope.sh
+mv scope.sh ~/.local/bin/scope
+chmod +x ~/.local/bin/scope
+scope fullmetal-alchemist-brotherhood-episode-18-sub.mp4
+nuke fullmetal-alchemist-brotherhood-episode-16-sub.mp4
+nvim $(which scope)
+scope fullmetal-alchemist-brotherhood-episode-18-sub.mp4
+nvim $(which scope)
+scope fullmetal-alchemist-brotherhood-episode-18-sub.mp4
+nvim $(which scope)
+scope fullmetal-alchemist-brotherhood-episode-18-sub.mp4
+rm $(which scope)
+ls
+clear
+ls
+mpv fullmetal-alchemist-brotherhood-episode-36-sub.mp4
+cd
+clear
+z fma
+ls
+r
+z fma
+ls
+ani-cli -d -q 480 -e 56-60 full metal alchemist brotherhood 
+ani-cli -U
+ani-cli -d -q 480 -e 56-60 full metal alchemist brotherhood 
+pg
+ani-cli -U
+ani-cli -d -q 480 -e 56-60 full metal alchemist brotherhood 
+rm ~/.local/bin/ani-cli
+nix-env -iA nixos.ani-cli
+pg
+cd
+clear
+ls
+cler
+ls
+clear
+ls
+z fma
+ls
+ls -la
+clear
+cd
+clear
+cd
+clear
+mpv fullmetal-alchemist-brotherhood-episode-40-sub.mp4
+ani-cli -d -q 480 -e 1-3 blue lock
+mpv fullmetal-alchemist-brotherhood-episode-41-sub.mp4
+nix-channel --update
+cd
+clear
+ls
+nvim
+clear
+nvim
+z fma
+r
+mpv fullmetal-alchemist-brotherhood-episode-10-sub.mp4
+mpv fullmetal-alchemist-brotherhood-episode-42-sub.mp4
+mpv fullmetal-alchemist-brotherhood-episode-43-sub.mp4
+mpv fullmetal-alchemist-brotherhood-episode-44-sub.mp4
+nix-channel --update
+home-manager switch
+nix-env -iA nixos.ani-cli
+ani-cli -d -q 480 -e 1-3 blue lock
+ping google.com
+clear
+mpv fullmetal-alchemist-brotherhood-episode-45-sub.mp4
+mpv fullmetal-alchemist-brotherhood-episode-46-sub.mp4
+z local bin
+ls
+wget 'https://raw.githubusercontent.com/pystardust/ani-cli/master/ani-cli' 
+chmod +x ~/.local/bin/ani-cli
+clear
+ls
+clear
+ls
+clear
+cd
+clear
+nix-env --uninstall ani-cli
+clear
+ani-cli -U
+ani-cli -q 480 blue lock
+ani-cli
+cd
+clear
+ls
+clear
+nvim
+nvi
+nvim
+which nvim
+clear
+ls
+clar
+sudo su
+cleawr
+ls
+clear
+ls
+clewar
+doa
+clewar
+ls
+clear
+emacs -ne
+emacs -nw
+clear
+ls
+cleawr
+clear
+ls
+cleawr
+clear
+ls
+clear
+ls
+clear
+ls
+emacs -nw
+emacsclient -nw
+emacsclient -nwc
+emacsclient -ncw
+emacsclient -c
+emacsclient -nw
+emacs -nw
+clear
+emacsclient -nw
+clear
+ls
+tmu
+tmux
+clear
+r
+clear
+ls
+clear
+ls
+cd
+clear
+ls
+kitty --single-instance
+clear
+htop
+clear
+z fma
+l
+which l
+clear
+ls -lah
+celar
+ls -a
+clear
+ls
+cjear
+clear
+mpv fullmetal-alchemist-brotherhood-episode-47-sub.mp4
+clear
+mpv fullmetal-alchemist-brotherhood-episode-48-sub.mp4
+rm fullmetal-alchemist-brotherhood-episode-48-sub.mp4
+pg
+systemctl restart NetworkManager.service
+clear
+ls
+clear
+mpv fullmetal-alchemist-brotherhood-episode-50-sub.mp4
+mpv fullmetal-alchemist-brotherhood-episode-49-sub.mp4
+ls
+cleawr
+clear
+ls
+emacs -nw
+clear
+emacsclient -nw
+clear
+ls
+cleawr
+ls
+cleawr
+ls
+clear
+tmux
+r
+clear
+emacsclient -nw
+cleaer
+clear
+mpv fullmetal-alchemist-brotherhood-episode-52-sub.mp4
+ani-cli -U
+ls
+pg
+systemctl restart NetworkManager.service
+clear
+mpv fullmetal-alchemist-brotherhood-episode-53-sub.mp4
+ani-cli -U
+mpv fullmetal-alchemist-brotherhood-episode-54-sub.mp4
+mpv fullmetal-alchemist-brotherhood-episode-55-sub.mp4
+z fma
+ani-cli -d -q 480 full metal alchemist brotherhood
+cd
+clear
+cd
+clear
+ls
+clear
+ls
+neofetch
+, neofetch
+pip install animdl
+cd python
+z python
+ls
+mkdir animdl
+cd animdl
+python -m venv x
+source x/bin/activate
+clear
+ls
+pip install animdl
+which animdl
+exit
+ls
+z animdl
+ls
+ped
+source x/bin/activate
+clear
+ls
+animdl download -d ~/Data/movie/anime/fma -q worst -r 56-60 full metal alchemist brotherhood 
+animdl download -d ~/Data/movie/anime/fma -q worst -r 56-60 "full metal alchemist brotherhood" 
+ls
+z fma
+ls
+cd Fullmetal\ Alchemist\ -\ \ Brotherhood
+ls
+..
+ls
+z fma
+ls
+r
+clear
+animdl download -d ~/Data/movie/anime/fma -q 720 -r 56-60 "full metal alchemist brotherhood" 
+r
+animdl download -d ~/Data/movie/anime/fma -q worst -r 56-60 "full metal alchemist brotherhood" 
+animdl download -d ~/Data/movie/anime/fma -q worst -r 61-64 "full metal alchemist brotherhood" 
+source x/bin/activate ; animdl download -d ~/Data/movie/anime/ -q worst -r 1-5 "blue lock" 
+source x/bin/activate ; animdl download -d ~/Data/movie/anime/ -q 480 -r 1-5 "blue lock" 
+source x/bin/activate ; animdl download -d ~/Data/movie/anime/ -q worst -r 1-5 "blue lock" 
+z fma
+..
+ls
+cd Blue\ Lock
+ls
+r
+ls
+clear
+rm *
+clear
+ls
+clear
+cd
+clear
+z fma
+ls
+r
+cd
+clear
+z fma
+ls
+r
+pkill mpv
+: 1688133005:0;..
+: 1688133007:0;cd fma
+: 1688133010:0;du -h
+: 1688133204:0;clear
+: 1688133204:0;cd
+: 1688133205:0;clear
+: 1688133208:0;celare
+: 1688133208:0;ls
+: 1688133209:0;clear
+: 1688133209:0;ls
+: 1688133210:0;clear
+: 1688133232:0;rm ~/.config/zsh
