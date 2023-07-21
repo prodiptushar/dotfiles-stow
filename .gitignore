@@ -4,3 +4,6 @@
 .config/mpv/uosc.zip
 .config/zsh/.zcompdump.nixos.167429
 .local/sync/files/home-manager/todo.md
+/.config/doom/snippets/js-mode/
+/.config/doom/snippets/js2-mode/
+/.config/doom/snippets/js3-mode/

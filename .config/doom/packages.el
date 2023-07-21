@@ -50,9 +50,10 @@
 ;(unpin! t)
 
 (unpin! org-roam)
-(unpin! web-mode)
+;; (unpin! web-mode)
 (package! org-roam-ui)
 (package! zoxide)
+;; (package! tmux-pane)
 (package! key-chord)
 (package! org-alert)
 (package! evil-quickscope)

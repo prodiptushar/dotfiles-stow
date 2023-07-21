@@ -1,4 +1,13 @@
 { config, pkgs, ... }:
+let
+  tex = (pkgs.texlive.combine {
+    inherit (pkgs.texlive) scheme-basic
+      dvisvgm dvipng# for preview and export as html
+      wrapfig amsmath ulem hyperref capt-of;
+    #(setq org-latex-compiler "lualatex")
+    #(setq org-preview-latex-default-process 'dvisvgm)
+  });
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -62,7 +71,6 @@
     aria2
     lf
     lazygit
-    emacs29-pgtk
     gtk3
     nnn
     ctpv
@@ -77,6 +85,8 @@
     fuzzel
     gcc
     stow
+    light
+    gcc-unwrapped
     neovim
     noto-fonts-emoji
     (nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro" ]; })
@@ -106,6 +116,7 @@
     userName = "prodiptushar";
     userEmail = "prodiptushar01@gmail.com";
   };
+  programs.emacs.enable = true;
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {

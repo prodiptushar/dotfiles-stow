@@ -9,8 +9,12 @@ settings:
   colors.webpage.darkmode.enabled:
     global: false
   content.blocking.method:
-    global: both
+    global: adblock
   content.notifications.enabled:
     https://dirtyindianporn.info: false
+    https://wayofgainsurvey.top: false
+  qt.environ:
+    global:
+      NODE_PATH: /home/prodip/.npm-packages/lib/node_modules
   url.start_pages:
     global: google.com

@@ -84,7 +84,7 @@
     LC_NUMERIC = "bn_BD";
     LC_PAPER = "bn_BD";
     LC_TELEPHONE = "bn_BD";
-    LC_TIME = "bn_BD";
+    LC_TIME = "en_US.UTF-8";
   };
 
   # Configure keymap in X11
@@ -97,13 +97,25 @@
   users.users.prodip = {
     isNormalUser = true;
     description = "prodip";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       python3
       nodejs_20
     ];
   };
 
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
+  # fonts.fonts = with pkgs; [
+  #   noto-fonts
+  #   noto-fonts-emoji
+  #   liberation_ttf
+  #   (nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro" ]; })
+  # ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

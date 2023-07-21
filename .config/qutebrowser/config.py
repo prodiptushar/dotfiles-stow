@@ -169,15 +169,16 @@ c.url.searchengines = {'DEFAULT': 'https://google.com/search?hl=en&q={}', '!y': 
 config.bind('<Ctrl+j>', 'completion-item-focus next', mode='command')
 config.bind('<Ctrl+k>', 'completion-item-focus prev', mode='command')
 config.bind('ge', 'edit-url', mode='normal')
+c.qt.environ = {"NODE_PATH": "/usr/lib/node_modules"}
+c.aliases = {"readability" : "spawn --userscript readability-js"}
+config.bind(',;m', 'hint links spawn ~/.local/sync/scripts/fast-mpv {hint-url}')
 
-config.bind(',;m', 'hint links spawn mpv {hint-url}')
-
-config.bind(',;d', 'hint links spawn st -e yt-dlp --downloader http:aria2c -i -f 18 -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {hint-url}')
-config.bind(',;D', 'hint links spawn st -e yt-dlp --downloader http:aria2c -i -f 22 -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {hint-url}')
-config.bind(',;ud', 'hint links spawn st -e yt-dlp  -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {hint-url}')
-config.bind(',ud', 'spawn st -e yt-dlp -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {url}')
-config.bind(',d', 'spawn st -e yt-dlp --downloader http:aria2c -i -f 18 -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {url}')
-config.bind(',D', 'spawn st -e yt-dlp --downloader http:aria2c -i -f 22 -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {url}')
-c.editor.command = ['st', '-e', 'nvim', '{}']
+config.bind(',;d', 'hint links spawn foot -e yt-dlp --downloader http:aria2c -i -f 18 -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {hint-url}')
+config.bind(',;D', 'hint links spawn foot -e yt-dlp --downloader http:aria2c -i -f 22 -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {hint-url}')
+config.bind(',;ud', 'hint links spawn foot -e yt-dlp  -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {hint-url}')
+config.bind(',ud', 'spawn foot -e yt-dlp -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {url}')
+config.bind(',d', 'spawn foot -e yt-dlp --downloader http:aria2c -i -f 18 -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {url}')
+config.bind(',D', 'spawn foot -e yt-dlp --downloader http:aria2c -i -f 22 -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {url}')
+c.editor.command = ['foot', '-e', 'nvim', '{}']
 
 
