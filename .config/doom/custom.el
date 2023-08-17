@@ -7,8 +7,8 @@
  '(custom-safe-themes
    '("eab123a5ed21463c780e17fc44f9ffc3e501655b966729a2d5a2072832abd3ac" default))
  '(package-selected-packages '(@ openwith org-web-tools zoxide fancy-dabbrev))
- '(smtpmail-smtp-server "smtp.gmail.com" t)
- '(smtpmail-smtp-service 25 t)
+ '(smtpmail-smtp-server "smtp.gmail.com")
+ '(smtpmail-smtp-service 25)
  '(warning-suppress-types
    '((comp)
      (doom-first-buffer-hook)

@@ -56,7 +56,7 @@
 
     ];
   };
-
+  security.polkit.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -103,6 +103,7 @@
       nodejs_20
     ];
   };
+  services.flatpak.enable = true;
 
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
@@ -141,6 +142,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+    pinentryFlavor = "gnome3";
   };
 
   # List services that you want to enable:
@@ -152,7 +154,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -33,7 +33,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-solarized-dark)
+(setq doom-theme 'doom-one)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -41,8 +41,8 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Document/org/")
-(setq org-agenda-files '("~/Document/org/todo.org"))
+(setq org-directory "~/Documents/org/")
+(setq org-agenda-files '("~/Documents/org/todo.org" "~/Documents/org/dailyTodo.org"))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -131,7 +131,7 @@
 
 ;; Roam
 
-(setq! org-roam-directory "~/Document/org/org-notes/")
+(setq! org-roam-directory "~/Documents/org/org-notes/")
 (use-package! org-roam
   :config
   (setq org-roam-complete-everywhere t
@@ -213,7 +213,7 @@
 
 
 ;; quickscope
-(global-evil-quickscope-mode 1)
+;; (global-evil-quickscope-mode 1)
 ;; quickscope
 
 ;; Key Bindings
@@ -221,17 +221,17 @@
 (key-chord-mode 1)
 (key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
 
-(map! :n "s" 'evil-avy-goto-char)
+;; (map! :n "s" 'evil-avy-goto-char)
 
-(map! :leader
-      :desc "Zoxide find file"
-      "f z" #'zoxide-find-file)
+;; (map! :leader
+;;       :desc "Zoxide find file"
+;;       "f z" #'zoxide-find-file)
 
 (map! :leader
       :desc "comment like vim"
       "/" #'comment-line)
 
-(map! "M-/" #'+default/search-project)
+;; (map! "M-/" #'+default/search-project)
 
 (map! :leader
       :desc "Doom Home"
@@ -276,7 +276,7 @@
 ;; openwith package
 (setq +latex-viewers '(zathura))
 ;; elfeed
-(setq rmh-elfeed-org-files (list "~/Document/org/elfeed.org"))
+(setq rmh-elfeed-org-files (list "~/Documents/org/elfeed.org"))
 (after! elfeed
   (setq elfeed-curl-program-name "curl")
   (setq elfeed-search-filter "@1-month-ago"))
@@ -292,15 +292,14 @@
 ;;   (setq lsp-tailwindcss-major-modes '(typescript-tsx-mode rjsx-mode web-mode html-mode css-mode svelte-mode)))
 
 ;; tailwind
-(use-package! org-alert
-  :init
-  (setq org-alert-interval 300
-      org-alert-notify-cutoff 10
-      alert-default-style 'libnotify
-      org-alert-notify-after-event-cutoff 10)
-  (setq org-alert-time-match-string
-      "\\(?:SCHEDULED\\|DEADLINE\\):.*?<.*?\\([0-9]\\{2\\}:[0-9]\\{2\\}\\).*>"))
 
 ;; company mode
 (setq company-global-modes '(not vterm))
+(global-ede-mode 1)
+(semantic-mode 1)
+
 ;; company mode
+
+;; info mode
+(set-popup-rule! "^\\*info\\*$" :ignore t)
+;; info mode

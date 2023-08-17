@@ -170,7 +170,7 @@ config.bind('<Ctrl+j>', 'completion-item-focus next', mode='command')
 config.bind('<Ctrl+k>', 'completion-item-focus prev', mode='command')
 config.bind('ge', 'edit-url', mode='normal')
 c.qt.environ = {"NODE_PATH": "/usr/lib/node_modules"}
-c.aliases = {"readability" : "spawn --userscript readability-js"}
+c.aliases = {"readability" : "spawn --userscript readability-js", 'q': 'quit'}
 config.bind(',;m', 'hint links spawn ~/.local/sync/scripts/fast-mpv {hint-url}')
 
 config.bind(',;d', 'hint links spawn foot -e yt-dlp --downloader http:aria2c -i -f 18 -o \'~/Data/movie/yt/%(title)s-%(id)s.%(ext)s\' {hint-url}')

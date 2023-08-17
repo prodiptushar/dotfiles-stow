@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
   tex = (pkgs.texlive.combine {
-    inherit (pkgs.texlive) scheme-basic
+    inherit (pkgs.texlive) scheme-medium
       dvisvgm dvipng# for preview and export as html
       wrapfig amsmath ulem hyperref capt-of;
     #(setq org-latex-compiler "lualatex")
@@ -51,18 +51,21 @@ in
     imv
     nsxiv
     pam_gnupg
+    docker-compose
+    yarn
     rclone
     pass
     cmake
     isync
-    firefox
     foot
     mutt-wizard
     ueberzugpp
     nodePackages.npm
     python310Packages.pip
-    mako
+    dunst
+    pcmanfm
     tmux
+    tex
     file
     xdg-utils
     fzf
@@ -72,12 +75,15 @@ in
     lf
     lazygit
     gtk3
+    linux-firmware
     nnn
     ctpv
     fd
     jq
-    firefox
+    firefox-devedition
     htop
+    emacs29-pgtk
+    libsForQt5.kauth
     btop
     ripgrep
     acpi
@@ -86,13 +92,13 @@ in
     gcc
     stow
     light
+    libsForQt5.polkit-kde-agent
+    qt6.qtwayland
     gcc-unwrapped
     neovim
     noto-fonts-emoji
     (nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro" ]; })
     kitty
-    gimp-with-plugins
-    gimpPlugins.gmic
     zoxide
     wl-clipboard
     ispell
@@ -116,7 +122,6 @@ in
     userName = "prodiptushar";
     userEmail = "prodiptushar01@gmail.com";
   };
-  programs.emacs.enable = true;
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
