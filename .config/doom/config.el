@@ -297,9 +297,12 @@
 (setq company-global-modes '(not vterm))
 (global-ede-mode 1)
 (semantic-mode 1)
-
+(setq! +evil-want-o/O-to-continue-comments nil)
 ;; company mode
+
 
 ;; info mode
 (set-popup-rule! "^\\*info\\*$" :ignore t)
+;; (setq! org-clock-sound "~/.config/doom/ding.wav")
+(setq! org-clock-sound "~/Downloads/Ding Ding Ding.mp3")
 ;; info mode

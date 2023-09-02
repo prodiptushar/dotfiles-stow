@@ -42,7 +42,6 @@ in
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
-    brave
     ytfzf
     yt-dlp
     gnumake
@@ -52,7 +51,6 @@ in
     nsxiv
     pam_gnupg
     docker-compose
-    yarn
     rclone
     pass
     cmake
@@ -61,6 +59,7 @@ in
     mutt-wizard
     ueberzugpp
     nodePackages.npm
+    nodePackages_latest.pnpm
     python310Packages.pip
     dunst
     pcmanfm
@@ -83,7 +82,6 @@ in
     firefox-devedition
     htop
     emacs29-pgtk
-    libsForQt5.kauth
     btop
     ripgrep
     acpi
@@ -92,8 +90,6 @@ in
     gcc
     stow
     light
-    libsForQt5.polkit-kde-agent
-    qt6.qtwayland
     gcc-unwrapped
     neovim
     noto-fonts-emoji
@@ -109,6 +105,10 @@ in
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    ### Safe removal
+    # libsForQt5.kauth
+    # libsForQt5.polkit-kde-agent
+    # qt6.qtwayland
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
