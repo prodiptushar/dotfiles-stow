@@ -303,6 +303,16 @@
 
 ;; info mode
 (set-popup-rule! "^\\*info\\*$" :ignore t)
-;; (setq! org-clock-sound "~/.config/doom/ding.wav")
-(setq! org-clock-sound "~/Downloads/Ding Ding Ding.mp3")
+(setq! org-clock-sound "~/.config/doom/ding.wav")
 ;; info mode
+
+;; personal scripts
+(defun cust/vsplit-file-open (f)
+  (let ((evil-vsplit-window-right nil))
+    (+evil/window-vsplit-and-follow)
+    (find-file f)))
+
+(map! :after embark
+      :map embark-file-map
+      "V" #'cust/vsplit-file-open)
+;; personal scripts

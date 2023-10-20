@@ -48,6 +48,7 @@ in
     mu
     zathura
     imv
+    hugo
     nsxiv
     pam_gnupg
     docker-compose
@@ -81,7 +82,7 @@ in
     jq
     firefox-devedition
     htop
-    emacs29-pgtk
+    emacs29
     btop
     ripgrep
     acpi
