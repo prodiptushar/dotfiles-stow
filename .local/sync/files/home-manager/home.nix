@@ -22,19 +22,32 @@ in
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
-  programs.waybar = {
-    enable = true;
-    package = pkgs.waybar.overrideAttrs (oa: {
-      mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
-      patches = (oa.patches or [ ]) ++ [
-        (pkgs.fetchpatch {
-          name = "fix waybar hyprctl";
-          url = "https://aur.archlinux.org/cgit/aur.git/plain/hyprctl.patch?h=waybar-hyprland-git";
-          sha256 = "sha256-pY3+9Dhi61Jo2cPnBdmn3NUTSA8bAbtgsk2ooj4y7aQ=";
-        })
-      ];
-    });
-  };
+   # programs.waybar = {
+   #   enable = true;
+   #   package = pkgs.waybar.overrideAttrs (oa: {
+   #     mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
+   #     patches = (oa.patches or [ ]) ++ [
+   #       (pkgs.fetchpatch {
+   #         name = "fix waybar hyprctl";
+   #         url = "https://aur.archlinux.org/cgit/aur.git/plain/hyprctl.patch?h=waybar-hyprland-git";
+   #         sha256 = "sha256-pY3+9Dhi61Jo2cPnBdmn3NUTSA8bAbtgsk2ooj4y7aQ=";
+   #       })
+   #     ];
+   #   });
+   # };
+# nixpkgs.overlays = [
+#     (self: super: {
+#        waybar = super.waybar.overrideAttrs (oldAttrs: {
+#          src = super.fetchFromGitHub {
+#            owner = "Alexays";
+#            repo = "waybar";
+#            rev = "e30fba0b8f875c7f35e3173be2b9f6f3ffe3641e";
+#            hash = "sha256-9LJDA+zrHF9Mn8+W9iUw50LvO+xdT7/l80KdltPrnDo=";
+#          };
+#          mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+#        });
+#     })
+#   ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
@@ -49,6 +62,7 @@ in
     zathura
     imv
     hugo
+    waybar
     nsxiv
     pam_gnupg
     docker-compose
