@@ -8,3 +8,4 @@ https://www.youtube.com/watch?v=NYyImy-lqaA&list=PLRGI9KQ3_HP_OFRG6R-p4iFgMSK1t5
 "ssh -p '8022' 'u0_a196@192.168.0.3'"
 sshfs -p '8022' 'u0_a196@192.168.0.3:storage/' ~/mnt
 https://www.knowledgehut.com/blog/web-development/html-projects
+\\n

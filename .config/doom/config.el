@@ -42,8 +42,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Documents/org/")
-(setq org-agenda-files '("~/Documents/org/todo.org" "~/Documents/org/dailyTodo.org"))
-
+(setq org-agenda-files '("~/Documents/org/agenda"))
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
@@ -305,6 +304,24 @@
 (set-popup-rule! "^\\*info\\*$" :ignore t)
 (setq! org-clock-sound "~/.config/doom/ding.wav")
 ;; info mode
+
+;; yt
+(use-package elfeed-tube
+  :after elfeed
+  :demand t
+  :config
+  ;; (setq elfeed-tube-auto-save-p nil) ; default value
+  ;; (setq elfeed-tube-auto-fetch-p t)  ; default value
+  (elfeed-tube-setup)
+  :bind (:map elfeed-show-mode-map
+         ("F" . elfeed-tube-fetch)
+         ([remap save-buffer] . elfeed-tube-save)
+         :map elfeed-search-mode-map
+         ("F" . elfeed-tube-fetch)
+         ([remap save-buffer] . elfeed-tube-save)))
+;; yt
+
+
 
 ;; personal scripts
 (defun cust/vsplit-file-open (f)

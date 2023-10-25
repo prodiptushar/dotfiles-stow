@@ -9,3 +9,4 @@
 channel_id=$(echo $channel_link | sed 's/.*\///')
 
  echo "** https://www.youtube.com/feeds/videos.xml?channel_id=$channel_id" >> ~/Documents/org/elfeed.org
+notify-send "Subscribed" "$(wl-paste)"
