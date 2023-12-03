@@ -21,7 +21,7 @@ feed="$(wl-paste)"
 
 
 case "$(printf "row yt-dlp\\naudio yt-dlp\\nlow yt-dlp\\nhigh yt-dlp\\nDownload\\nmpv\\nSubscribe Yt\\nSave Snippet" | fuzzel -d -i -p "Open it with?  ")" in
-	"mpv")setsid -f  yt-dlp -o - "$feed" |  mpv -quiet - >/dev/null 2>&1 ;;
+	"mpv")~/.local/sync/scripts/fast-mpv "$feed" >/dev/null 2>&1 ;;
 	"row yt-dlp") foot -e yt-dlp --no-playlist -o "$HOME/Data/movie/yt/%(title)s.%(ext)s" "$feed";;
 	"low yt-dlp") foot -e yt-dlp --no-playlist -i -f 18 -o "$HOME/Data/movie/yt/%(title)s.%(ext)s" "$feed">/dev/null 2>&1 ;;
 	"high yt-dlp") foot -e yt-dlp --no-playlist -i -f 22 -o "$HOME/Data/movie/yt/%(title)s.%(ext)s" "$feed" >/dev/null 2>&1 ;;

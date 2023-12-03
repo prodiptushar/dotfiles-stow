@@ -35,19 +35,13 @@ in
    #     ];
    #   });
    # };
-# nixpkgs.overlays = [
-#     (self: super: {
-#        waybar = super.waybar.overrideAttrs (oldAttrs: {
-#          src = super.fetchFromGitHub {
-#            owner = "Alexays";
-#            repo = "waybar";
-#            rev = "e30fba0b8f875c7f35e3173be2b9f6f3ffe3641e";
-#            hash = "sha256-9LJDA+zrHF9Mn8+W9iUw50LvO+xdT7/l80KdltPrnDo=";
-#          };
-#          mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-#        });
-#     })
-#   ];
+nixpkgs.overlays = [
+    (self: super: {
+       waybar = super.waybar.overrideAttrs (oldAttrs: {
+         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+       });
+    })
+  ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
 
@@ -62,7 +56,6 @@ in
     zathura
     imv
     hugo
-    waybar
     nsxiv
     pam_gnupg
     docker-compose
@@ -109,7 +102,6 @@ in
     neovim
     noto-fonts-emoji
     (nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro" ]; })
-    kitty
     zoxide
     wl-clipboard
     ispell

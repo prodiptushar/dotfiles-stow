@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-
- yt-dlp -o - $1 | mpv -
+ yt-dlp $1 -o - | mpv -

@@ -3,12 +3,12 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
 {
   imports =
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -54,6 +54,7 @@
       "*/5 * * * *      prodip    rsync -av /etc/nixos /home/prodip/.local/dotfiles/.local/sync/files/"
       "*/5 * * * *      prodip    rsync -av /home/prodip/.config/home-manager /home/prodip/.local/dotfiles/.local/sync/files/"
       "*/20 * * * *     prodip    rclone copy /home/prodip/Sync Sync:Sync"
+      "*/20 * * * *     prodip    rclone sync /home/prodip/Documents/org Sync:notes"
 
     ];
   };
@@ -105,6 +106,101 @@
     ];
   };
   services.flatpak.enable = true;
+  home-manager.users.prodip = { config, pkgs, ... }:
+    let
+    tex = (pkgs.texlive.combine {
+        inherit (pkgs.texlive) scheme-medium
+        dvisvgm dvipng# for preview and export as html
+        wrapfig amsmath ulem hyperref capt-of;
+      #(setq org-latex-compiler "lualatex")
+      #(setq org-preview-latex-default-process 'dvisvgm)
+        });
+  in
+  {
+  home.packages = with pkgs;[
+    # # Adds the 'hello' command to your environment. It prints a friendly
+    # # "Hello, world!" when run.
+    # pkgs.hello
+    ytfzf
+    yt-dlp
+    gnumake
+    mu
+    zathura
+    imv
+    hugo
+    nsxiv
+    pam_gnupg
+    docker-compose
+    rclone
+    pass
+    cmake
+    isync
+    foot
+    mutt-wizard
+    neomutt
+    ueberzugpp
+    nodePackages.npm
+    nodePackages_latest.pnpm
+    python310Packages.pip
+    dunst
+    pcmanfm
+    tmux
+    tex
+    file
+    xdg-utils
+    fzf
+    mpv
+    ffmpeg
+    aria2
+    lf
+    lazygit
+    gtk3
+    linux-firmware
+    nnn
+    ctpv
+    fd
+    jq
+    firefox-devedition
+    htop
+    emacs29
+    btop
+    ripgrep
+    acpi
+    tofi
+    fuzzel
+    gcc
+    stow
+    light
+    gcc-unwrapped
+    neovim
+    noto-fonts-emoji
+    (nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro" ]; })
+    zoxide
+    wl-clipboard
+    ispell
+    sqlite
+    wordnet
+];
+# The state version is required and should stay at the version you
+  # originally installed.
+    home.stateVersion = "23.11";
+
+  programs.git = {
+    enable = true;
+    userName = "prodiptushar";
+    userEmail = "prodiptushar01@gmail.com";
+  };
+
+  xdg.enable = true;
+  xdg.mime.enable = true;
+  targets.genericLinux.enable = true;
+  fonts.fontconfig.enable = true;
+  programs.bat.enable = true;
+
+
+
+  };
+
 
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
@@ -132,7 +228,6 @@
     desktop-file-utils
     foot
     libnotify
-    brave
     curl
   ];
 

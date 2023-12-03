@@ -33,7 +33,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-gruvbox)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -220,7 +220,7 @@
 (key-chord-mode 1)
 (key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
 
-;; (map! :n "s" 'evil-avy-goto-char)
+(map! :n "s" 'evil-avy-goto-char-timer)
 
 ;; (map! :leader
 ;;       :desc "Zoxide find file"
@@ -239,7 +239,7 @@
 
 (define-key evil-insert-state-map (kbd "C-l") 'forward-char)
 (define-key evil-insert-state-map (kbd "C-h") 'backward-char)
-(define-key evil-normal-state-map (kbd "s") 'avy-goto-char-2)
+(define-key evil-normal-state-map (kbd "s") 'evil-avy-goto-char-timer)
 
 ;; Key Bindings
 
@@ -321,6 +321,25 @@
          ([remap save-buffer] . elfeed-tube-save)))
 ;; yt
 
+(use-package org-mind-map
+  :init
+  (require 'ox-org)
+  ;; Uncomment the below if 'ensure-system-packages` is installed
+  ;;:ensure-system-package (gvgen . graphviz)
+  :config
+  (setq org-mind-map-engine "dot")       ; Default. Directed Graph
+  ;; (setq org-mind-map-engine "neato")  ; Undirected Spring Graph
+  ;; (setq org-mind-map-engine "twopi")  ; Radial Layout
+  ;; (setq org-mind-map-engine "fdp")    ; Undirected Spring Force-Directed
+  ;; (setq org-mind-map-engine "sfdp")   ; Multiscale version of fdp for the layout of large graphs
+  ;; (setq org-mind-map-engine "twopi")  ; Radial layouts
+  ;; (setq org-mind-map-engine "circo")  ; Circular Layout
+  )
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main")
+  )
+
+
 
 
 ;; personal scripts
@@ -332,4 +351,70 @@
 (map! :after embark
       :map embark-file-map
       "V" #'cust/vsplit-file-open)
+
+
 ;; personal scripts
+
+;; Better org
+(add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
+(add-hook 'org-mode-hook #'org-modern-mode)
+(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+
+(setq! org-startup-indented t
+                  org-pretty-entities t
+                  org-use-sub-superscripts "{}"
+                  org-hide-emphasis-markers t
+                  org-startup-with-inline-images t
+                  org-image-actual-width '(200))
+
+(use-package org-appear
+    :hook
+    (org-mode . org-appear-mode))
+
+(use-package olivetti
+:hook (org-mode . olivetti-mode))
+
+(let* (
+       (variable-lower
+        (cond ((x-list-fonts "FiraCode Nerd Font") '(:font "FiraCode Nerd Font"))))
+       (headline           `(:weight bold))
+       (headline-lower           `(:weight semibold))
+       )
+
+  (custom-theme-set-faces
+   'user
+   `(org-level-8 ((t (,@headline-lower ,@variable-lower))))
+   `(org-level-7 ((t (,@headline-lower ,@variable-lower))))
+   `(org-level-6 ((t (,@headline-lower ,@variable-lower))))
+   `(org-level-5 ((t (,@headline-lower ,@variable-lower))))
+   `(org-level-4 ((t (,@headline-lower ,@variable-lower :height 1.55))))
+   `(org-level-3 ((t (,@headline-lower ,@variable-lower :height 1.75))))
+   `(org-level-2 ((t (,@headline-lower ,@variable-lower :height 1.80))))
+   `(org-level-1 ((t (,@headline-lower ,@variable-lower :height 2.0))))
+   `(org-document-title ((t (,@headline ,@variable-lower :height 3.0 :underline nil))))))
+
+(custom-theme-set-faces
+ 'user
+ '(variable-pitch ((t (:family "ETBembo" :height 30 :weight bold))))
+ '(fixed-pitch ((t ( :family "FiraCode Nerd Font" :height 15)))))
+
+(defun my-adjoin-to-list-or-symbol (element list-or-symbol)
+  (let ((list (if (not (listp list-or-symbol))
+                  (list list-or-symbol)
+                list-or-symbol)))
+    (require 'cl-lib)
+    (cl-adjoin element list)))
+
+(eval-after-load "org"
+  '(mapc
+    (lambda (face)
+      (set-face-attribute
+       face nil
+       :inherit
+       (my-adjoin-to-list-or-symbol
+        'fixed-pitch
+        (face-attribute face :inherit))))
+    (list 'org-code 'org-block 'org-table)))
+
+
+;; Better org
