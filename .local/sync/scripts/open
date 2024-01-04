@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 # type="$(file -b $1)"
 # if [ "${type%%,*}" == "PDF document" ]; then
@@ -12,7 +12,7 @@
  pdfFiles="pdf"
 
  if echo $fehFiles | grep -w $ext > /dev/null; then
- 	 nohup sxiv "$1" >/dev/null &
+ 	 nohup nsxiv "$1" >/dev/null &
  elif echo $mpvFiles | grep -w $ext > /dev/null; then
  	 nohup mpv --loop "$1" > /dev/null &
  elif echo $pdfFiles | grep -w $ext > /dev/null; then

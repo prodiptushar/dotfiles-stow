@@ -1,4 +1,3 @@
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
@@ -43,6 +42,9 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Documents/org/")
 (setq org-agenda-files '("~/Documents/org/agenda"))
+;; (setq org-agenda-files
+;;       (append
+;;        (file-expand-wildcards "~/Documents/org/agenda/*.org")))
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
@@ -212,7 +214,7 @@
 
 
 ;; quickscope
-;; (global-evil-quickscope-mode 1)
+(global-evil-quickscope-mode 1)
 ;; quickscope
 
 ;; Key Bindings
@@ -321,23 +323,25 @@
          ([remap save-buffer] . elfeed-tube-save)))
 ;; yt
 
-(use-package org-mind-map
-  :init
-  (require 'ox-org)
-  ;; Uncomment the below if 'ensure-system-packages` is installed
-  ;;:ensure-system-package (gvgen . graphviz)
-  :config
-  (setq org-mind-map-engine "dot")       ; Default. Directed Graph
-  ;; (setq org-mind-map-engine "neato")  ; Undirected Spring Graph
-  ;; (setq org-mind-map-engine "twopi")  ; Radial Layout
-  ;; (setq org-mind-map-engine "fdp")    ; Undirected Spring Force-Directed
-  ;; (setq org-mind-map-engine "sfdp")   ; Multiscale version of fdp for the layout of large graphs
-  ;; (setq org-mind-map-engine "twopi")  ; Radial layouts
-  ;; (setq org-mind-map-engine "circo")  ; Circular Layout
-  )
+;; (use-package org-mind-map
+;;   :init
+;;   (require 'ox-org)
+;;   ;; Uncomment the below if 'ensure-system-packages` is installed
+;;   ;;:ensure-system-package (gvgen . graphviz)
+;;   :config
+;;   (setq org-mind-map-engine "dot")       ; Default. Directed Graph
+;;   ;; (setq org-mind-map-engine "neato")  ; Undirected Spring Graph
+;;   ;; (setq org-mind-map-engine "twopi")  ; Radial Layout
+;;   ;; (setq org-mind-map-engine "fdp")    ; Undirected Spring Force-Directed
+;;   ;; (setq org-mind-map-engine "sfdp")   ; Multiscale version of fdp for the layout of large graphs
+;;   ;; (setq org-mind-map-engine "twopi")  ; Radial layouts
+;;   ;; (setq org-mind-map-engine "circo")  ; Circular Layout
+;;   )
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main")
   )
+
+
 
 
 
@@ -353,68 +357,93 @@
       "V" #'cust/vsplit-file-open)
 
 
+
+
 ;; personal scripts
 
 ;; Better org
-(add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
-(add-hook 'org-mode-hook #'org-modern-mode)
-(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+;; (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
+;; (add-hook 'org-mode-hook #'org-modern-mode)
+;; (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
 
-(setq! org-startup-indented t
-                  org-pretty-entities t
-                  org-use-sub-superscripts "{}"
-                  org-hide-emphasis-markers t
-                  org-startup-with-inline-images t
-                  org-image-actual-width '(200))
+;; (setq! org-startup-indented t
+;;                   org-pretty-entities t
+;;                   org-use-sub-superscripts "{}"
+;;                   org-hide-emphasis-markers t
+;;                   org-startup-with-inline-images t
+;;                   org-image-actual-width '(300))
 
-(use-package org-appear
-    :hook
-    (org-mode . org-appear-mode))
+;; (use-package org-appear
+;;     :hook
+;;     (org-mode . org-appear-mode))
 
-(use-package olivetti
-:hook (org-mode . olivetti-mode))
+;; (use-package olivetti
+;; :hook (org-mode . olivetti-mode))
 
-(let* (
-       (variable-lower
-        (cond ((x-list-fonts "FiraCode Nerd Font") '(:font "FiraCode Nerd Font"))))
-       (headline           `(:weight bold))
-       (headline-lower           `(:weight semibold))
-       )
+;; (let* (
+;;        (variable-lower
+;;         (cond ((x-list-fonts "FiraCode Nerd Font") '(:font "FiraCode Nerd Font"))))
+;;        (headline           `(:weight bold))
+;;        (headline-lower           `(:weight semibold))
+;;        )
 
-  (custom-theme-set-faces
-   'user
-   `(org-level-8 ((t (,@headline-lower ,@variable-lower))))
-   `(org-level-7 ((t (,@headline-lower ,@variable-lower))))
-   `(org-level-6 ((t (,@headline-lower ,@variable-lower))))
-   `(org-level-5 ((t (,@headline-lower ,@variable-lower))))
-   `(org-level-4 ((t (,@headline-lower ,@variable-lower :height 1.55))))
-   `(org-level-3 ((t (,@headline-lower ,@variable-lower :height 1.75))))
-   `(org-level-2 ((t (,@headline-lower ,@variable-lower :height 1.80))))
-   `(org-level-1 ((t (,@headline-lower ,@variable-lower :height 2.0))))
-   `(org-document-title ((t (,@headline ,@variable-lower :height 3.0 :underline nil))))))
+;;   (custom-theme-set-faces
+;;    'user
+;;    `(org-level-8 ((t (,@headline-lower ,@variable-lower))))
+;;    `(org-level-7 ((t (,@headline-lower ,@variable-lower :height 1.25))))
+;;    `(org-level-6 ((t (,@headline-lower ,@variable-lower :height 1.35))))
+;;    `(org-level-5 ((t (,@headline-lower ,@variable-lower :height 1.45))))
+;;    `(org-level-4 ((t (,@headline-lower ,@variable-lower :height 1.55))))
+;;    `(org-level-3 ((t (,@headline-lower ,@variable-lower :height 1.75))))
+;;    `(org-level-2 ((t (,@headline-lower ,@variable-lower :height 1.85))))
+;;    `(org-level-1 ((t (,@headline-lower ,@variable-lower :height 2.0))))
+;;    `(org-document-title ((t (,@headline ,@variable-lower :height 3.0 :underline nil))))))
 
-(custom-theme-set-faces
- 'user
- '(variable-pitch ((t (:family "ETBembo" :height 30 :weight bold))))
- '(fixed-pitch ((t ( :family "FiraCode Nerd Font" :height 15)))))
+;; (custom-theme-set-faces
+;;  'user
+;;  '(variable-pitch ((t (:family "ETBembo" :height 30 :weight bold))))
+;;  '(fixed-pitch ((t ( :family "FiraCode Nerd Font" :height 15)))))
 
-(defun my-adjoin-to-list-or-symbol (element list-or-symbol)
-  (let ((list (if (not (listp list-or-symbol))
-                  (list list-or-symbol)
-                list-or-symbol)))
-    (require 'cl-lib)
-    (cl-adjoin element list)))
+;; (defun my-adjoin-to-list-or-symbol (element list-or-symbol)
+;;   (let ((list (if (not (listp list-or-symbol))
+;;                   (list list-or-symbol)
+;;                 list-or-symbol)))
+;;     (require 'cl-lib)
+;;     (cl-adjoin element list)))
 
-(eval-after-load "org"
-  '(mapc
-    (lambda (face)
-      (set-face-attribute
-       face nil
-       :inherit
-       (my-adjoin-to-list-or-symbol
-        'fixed-pitch
-        (face-attribute face :inherit))))
-    (list 'org-code 'org-block 'org-table)))
+;; (eval-after-load "org"
+;;   '(mapc
+;;     (lambda (face)
+;;       (set-face-attribute
+;;        face nil
+;;        :inherit
+;;        (my-adjoin-to-list-or-symbol
+;;         'fixed-pitch
+;;         (face-attribute face :inherit))))
+;;     (list 'org-code 'org-block 'org-table)))
 
 
 ;; Better org
+
+    (setq-default org-download-image-dir "~/Documents/org/org-notes/Assets")
+
+(define-derived-mode astro-mode web-mode "astro")
+(setq auto-mode-alist
+      (append '((".*\\.astro\\'" . astro-mode))
+              auto-mode-alist))
+
+(with-eval-after-load 'lsp-mode
+  (add-to-list 'lsp-language-id-configuration
+               '(astro-mode . "astro"))
+
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection '("astro-ls" "--stdio"))
+                    :activation-fn (lsp-activate-on "astro")
+                    :server-id 'astro-ls)))
+
+(use-package! treesit-auto
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))

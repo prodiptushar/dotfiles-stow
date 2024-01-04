@@ -36,15 +36,15 @@
       experimental-features = nix-command flakes
     '';
   };
-  programs.msmtp = {
-    enable = true;
-    accounts.default = {
-      host = "smtp.gmail.com";
-      from = "prodiptushar01@gmail.com";
-      user = "prodiptushar01@gmail.com";
-      password = "bmladlokwpcpogbk";
-    };
-  };
+  # programs.msmtp = {
+  #   enable = true;
+  #   accounts.default = {
+  #     host = "smtp.gmail.com";
+  #     from = "prodiptushar01@gmail.com";
+  #     user = "prodiptushar01@gmail.com";
+  #     password = "bmladlokwpcpogbk";
+  #   };
+  # };
   users.defaultUserShell = pkgs.zsh;
   users.users.prodip.shell = pkgs.zsh;
 
@@ -60,6 +60,7 @@
   };
   security.polkit.enable = true;
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -223,7 +224,6 @@
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    git
     wireguard-tools
     desktop-file-utils
     foot

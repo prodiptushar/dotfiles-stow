@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+while true :
+do
+  emacsclient -c --eval "(progn(org-todo-list) (keymap-local-set \"q\" 'evil-quit))"
+  sleep 600
+done

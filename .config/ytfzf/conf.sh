@@ -7,4 +7,7 @@ YTFZF_PREF="bestvideo[height<=?720]+bestaudio/best" # set the video format
 is_loop=1
 show_thumbnails=1
 async_thumbnails=1
-load_thumbnail_viewer sixel
+# load_thumbnail_viewer sixel
+video_player="mpv"
+thumbnail_viewer="wayland"
+

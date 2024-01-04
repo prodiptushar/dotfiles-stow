@@ -67,8 +67,10 @@
 (package! elfeed-tube)
 (package! elfeed-tube-mpv)
 (package! org-drill)
-(package! org-mind-map)
-(package! org-modern)
-(package! org-appear
-  :recipe (:host github :repo "awth13/org-appear"))
-(package! olivetti)
+;; (package! org-mind-map)
+;; (package! org-modern)
+;; (package! org-appear
+;;   :recipe (:host github :repo "awth13/org-appear"))
+;; (package! olivetti)
+(package! anki-editor)
+(package! treesit-auto)
