@@ -40,11 +40,11 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Documents/org/")
-(setq org-agenda-files '("~/Documents/org/agenda"))
+(setq org-directory "~/Documents/notes/org/")
+(setq org-agenda-files '("~/Documents/notes/org/inbox/20220819220526-inbox.org"))
 ;; (setq org-agenda-files
 ;;       (append
-;;        (file-expand-wildcards "~/Documents/org/agenda/*.org")))
+;;        (file-expand-wildcards "~/Documents/notes/org/agenda/*.org")))
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
@@ -78,7 +78,6 @@
 ;; they are implemented.
 
 ;; (setq org-element-use-cache nil)
-
 ;; Lsp
 
 (after! lsp-ui
@@ -132,7 +131,7 @@
 
 ;; Roam
 
-(setq! org-roam-directory "~/Documents/org/org-notes/")
+(setq! org-roam-directory "~/Documents/notes/org/")
 (use-package! org-roam
   :config
   (setq org-roam-complete-everywhere t
@@ -277,10 +276,10 @@
 ;; openwith package
 (setq +latex-viewers '(zathura))
 ;; elfeed
-(setq rmh-elfeed-org-files (list "~/Documents/org/elfeed.org"))
+(setq rmh-elfeed-org-files (list "~/Documents/notes/org/elfeed.org"))
 (after! elfeed
-  (setq elfeed-curl-program-name "curl")
-  (setq elfeed-search-filter "@1-month-ago"))
+  (setq elfeed-curl-program-name "/usr/bin/curl")
+  (setq elfeed-search-filter "@3-month-ago"))
 (add-hook! 'elfeed-search-mode-hook #'elfeed-update)
 ;; elfeed
 ;;
@@ -347,8 +346,9 @@
 
 
 ;; personal scripts
+
 (defun cust/vsplit-file-open (f)
-  (let ((evil-vsplit-window-right nil))
+  (let ((evil-vsplit-window-right 'nil))
     (+evil/window-vsplit-and-follow)
     (find-file f)))
 
@@ -356,6 +356,13 @@
       :map embark-file-map
       "V" #'cust/vsplit-file-open)
 
+(map! :after org
+      :map org-mode-map
+      "C-h" #'backward-char)
+
+(map! :after org
+      :map org-mode-map
+      "C-l" #'forward-char)
 
 
 
@@ -425,7 +432,7 @@
 
 ;; Better org
 
-    (setq-default org-download-image-dir "~/Documents/org/org-notes/Assets")
+    (setq-default org-download-image-dir "~/Documents/notes/org/org-notes/Assets")
 
 (define-derived-mode astro-mode web-mode "astro")
 (setq auto-mode-alist

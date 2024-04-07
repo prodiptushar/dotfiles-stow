@@ -49,7 +49,9 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(unpin! org-roam)
+(package! org-roam
+  :recipe (:local-repo "~/other/repo/org-roam"
+           :files (:defaults "extensions/*")))
 ;; (unpin! web-mode)
 (package! org-roam-ui)
 ;; (package! zoxide)
