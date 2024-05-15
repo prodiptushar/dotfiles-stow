@@ -22,13 +22,13 @@ unbind-key H
 unbind-key L
 unbind-key c
 unbind-key ,
-browser "brave %u"
+browser "chromium %u"
 
 # Feed settings
 prepopulate-query-feeds yes
 refresh-on-startup yes
 
-macro w set browser "mpv %u" ; open-in-browser ; set browser "brave %u"
+macro w set browser "~/.local/sync/scripts/fast-mpv %u" ; open-in-browser ; set browser "chromium %u"
 
 # bind keys
 bind-key U show-urls

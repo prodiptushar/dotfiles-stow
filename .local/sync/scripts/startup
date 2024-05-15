@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
 
-if [[ ! $(pgrep -f  ~/.local/sync/scripts/todopopup) ]]; then
-  ~/.local/sync/scripts/todopopup
-fi
+# if [[ ! $(pgrep -f  ~/.local/sync/scripts/todopopup) ]]; then
+#   ~/.local/sync/scripts/todopopup
+# fi
+#
+
+chromium 
+footclient -e tmux 
+anki 
+emacsclient --alternate-editor=emacs -c 
+

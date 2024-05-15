@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
 
-
-
 # grab channel link from clipboard and convert to id with yt-dlp 
  channel_link=$(yt-dlp --playlist-items 0 -O playlist:channel_url $(wl-paste))
 # get the id with sed and use this to complete the link and send in in elfeed file
 channel_id=$(echo $channel_link | sed 's/.*\///')
 
- echo "** https://www.youtube.com/feeds/videos.xml?channel_id=$channel_id" >> ~/Documents/org/elfeed.org
+ # echo "** https://www.youtube.com/feeds/videos.xml?channel_id=$channel_id" >> ~/Documents/org/elfeed.org
+ echo "https://www.youtube.com/feeds/videos.xml?channel_id=$channel_id" >> ~/.config/newsboat/urls
 notify-send "Subscribed" "$(wl-paste)"

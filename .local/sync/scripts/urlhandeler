@@ -18,14 +18,15 @@
 # ------------------ xorg --------
 
 feed="$(wl-paste)"
+downloadDir="$HOME/Data/Download/yt"
 
 
 case "$(printf "row yt-dlp\\naudio yt-dlp\\nlow yt-dlp\\nhigh yt-dlp\\nDownload\\nmpv\\nSubscribe Yt\\nSave Snippet" | fuzzel -d -i -p "Open it with?  ")" in
 	"mpv")~/.local/sync/scripts/fast-mpv "$feed" >/dev/null 2>&1 ;;
-	"row yt-dlp") foot -e yt-dlp --no-playlist -o "$HOME/Data/movie/yt/%(title)s.%(ext)s" "$feed";;
-	"low yt-dlp") foot -e yt-dlp --no-playlist -i -f 18 -o "$HOME/Data/movie/yt/%(title)s.%(ext)s" "$feed">/dev/null 2>&1 ;;
-	"high yt-dlp") foot -e yt-dlp --no-playlist -i -f 22 -o "$HOME/Data/movie/yt/%(title)s.%(ext)s" "$feed" >/dev/null 2>&1 ;;
-	"audio yt-dlp") foot -e yt-dlp --no-playlist -f bestaudio --embed-metadata --restrict-filenames -o "$HOME/Data/movie/yt/%(title)s.%(ext)s" "$feed" >/dev/null 2>&1;;
+	"row yt-dlp") foot -e yt-dlp --no-playlist -o "$downloadDir/%(title)s.%(ext)s" "$feed";;
+	"low yt-dlp") foot -e yt-dlp --no-playlist -i -f 18 -o "$downloadDir/%(title)s.%(ext)s" "$feed">/dev/null 2>&1 ;;
+	"high yt-dlp") foot -e yt-dlp --no-playlist -i -f 22 -o "$downloadDir/%(title)s.%(ext)s" "$feed" >/dev/null 2>&1 ;;
+	"audio yt-dlp") foot -e yt-dlp --no-playlist -f bestaudio --embed-metadata --restrict-filenames -o "$downloadDir/%(title)s.%(ext)s" "$feed" >/dev/null 2>&1;;
 	"Download") foot -e aria2c "$feed" >/dev/null 2>&1 ;;
 	"Subscribe Yt") sh ~/.local/sync/scripts/ytsubscribe ;;
 	"Save Snippet") sh ~/.local/sync/scripts/save-snip ;;

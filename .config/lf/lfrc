@@ -1,3 +1,4 @@
+set ratios 1:2:3
 # Basic Settings
 set previewer ctpv
 set preview true

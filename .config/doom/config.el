@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-one)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -132,34 +132,51 @@
 ;; Roam
 
 (setq! org-roam-directory "~/Documents/notes/org/")
+
 (use-package! org-roam
   :config
   (setq org-roam-complete-everywhere t
-        org-roam-capture-templates
-                '(("d" "default" plain
-                   "%?"
-                   :if-new (file+head "Inbox/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-                   :unnarrowed t)
-                  ("s" "study notes" plain
-                   (file "/home/prodip/Document/org-notes/Templates/StudyTemplate.org")
-                   :if-new (file+head "Study/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-                   :unnarrowed t)
-                  ("b" "blog" plain
-                   "%?"
-                   :if-new (file+head "blogs/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-                   :unnarrowed t)
-                  ("n" "email newsletter" plain
-                   (file "/home/prodip/Document/org-notes/Templates/Default.org")
-                   :if-new (file+head "Inbox/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :newsletter:\n#+date: %<%Y-%m-%d>\n")
-                   :unnarrowed t)
-                  ("p" "project" plain
-                   (file "/home/prodip/Document/org/org-notes/Templates/ProjectTemplate.org")
-                   :if-new (file+head "Projects/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-                   :unnarrowed t))
+        org-roam-capture-templates '(
+                                     ("d" "default" plain
+                                      "%?"
+                                      :if-new (file+head "inbox/%<%Y%m%d%H%M%S>-${slug}.org" " ${title}\n")
+                                      :unnarrowed t)
+                                     )
+
         org-roam-dailies-capture-templates
                 '(("d" "default" entry "* %<%I:%M %p> %?" :target
                    (file+head "%<%Y-%m-%d>.org" "%<%Y-%m-%d>\n")))
-))
+
+        )
+  )
+;; (use-package! org-roam
+;;   :config
+;;   (setq org-roam-complete-everywhere t
+;;         org-roam-capture-templates
+;;                 '(("d" "default" plain
+;;                    "%?"
+;;                    :if-new (file+head "Inbox/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+;;                    :unnarrowed t)
+;;                   ("s" "study notes" plain
+;;                    (file "/home/prodip/Document/org-notes/Templates/StudyTemplate.org")
+;;                    :if-new (file+head "Study/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+;;                    :unnarrowed t)
+;;                   ("b" "blog" plain
+;;                    "%?"
+;;                    :if-new (file+head "blogs/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+;;                    :unnarrowed t)
+;;                   ("n" "email newsletter" plain
+;;                    (file "/home/prodip/Document/org-notes/Templates/Default.org")
+;;                    :if-new (file+head "Inbox/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :newsletter:\n#+date: %<%Y-%m-%d>\n")
+;;                    :unnarrowed t)
+;;                   ("p" "project" plain
+;;                    (file "/home/prodip/Document/org/org-notes/Templates/ProjectTemplate.org")
+;;                    :if-new (file+head "Projects/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+;;                    :unnarrowed t))
+;;         org-roam-dailies-capture-templates
+;;                 '(("d" "default" entry "* %<%I:%M %p> %?" :target
+;;                    (file+head "%<%Y-%m-%d>.org" "%<%Y-%m-%d>\n")))
+;; ))
 
 (use-package! websocket
     :after org-roam)
@@ -180,32 +197,33 @@
 
 
 ;; Mail
-;; Whithout this line under , mu4e does not seams to work in doom emacs
-(setq mu4e-headers-buffer-name "*mu4e-headers*")
 
-(setq mu4e-index-cleanup nil
-      mu4e-index-lazy-check t
-      mu4e-get-mail-command "mbsync -qa"
-      mu4e-update-interval 300
-      mu4e-maildir "~/.local/share/mail/prodiptushar01@gmail.com/"
-      )
-(setq +mu4e-gmail-accounts '(("prodiptushar01@gmail.com" . "/prodip")))
-(setq smtpmail-stream-type 'starttls)
-(setq smtpmail-default-smtp-server "smtp.gmail.com")
-(setq smtpmail-smtp-server "smtp.gmail.com")
-(setq smtpmail-smtp-service 587)
-(setq smtpmail-debug-info t)
+;; Whithout this line under , mu4e does not seams to work in doom emacs
+;; (setq mu4e-headers-buffer-name "*mu4e-headers*")
+
+;; (setq mu4e-index-cleanup nil
+;;       mu4e-index-lazy-check t
+;;       mu4e-get-mail-command "mbsync -qa"
+;;       mu4e-update-interval 300
+;;       mu4e-maildir "~/.local/share/mail/prodiptushar01@gmail.com/"
+;;       )
+;; (setq +mu4e-gmail-accounts '(("prodiptushar01@gmail.com" . "/prodip")))
+;; (setq smtpmail-stream-type 'starttls)
+;; (setq smtpmail-default-smtp-server "smtp.gmail.com")
+;; (setq smtpmail-smtp-server "smtp.gmail.com")
+;; (setq smtpmail-smtp-service 587)
+;; (setq smtpmail-debug-info t)
 ;; (add-to-list 'load-path "/home/prodip/.config/emacs/modules/email/mu4e/")
 ;; (setq auth-sources '(password-store))
-(setq auth-source-debug t)
-(setq auth-source-do-cache nil)
-(setq sendmail-program "/usr/bin/msmtp"
-      send-mail-function #'smtpmail-send-it
-      message-sendmail-f-is-evil t
-      smtpmail-smtp-user "prodip"
-      smtpmail-smtp-server "smtp.gmail.com"
-      message-sendmail-extra-arguments '("--read-envelope-from")
-      message-send-mail-function #'message-send-mail-with-sendmail)
+;; (setq auth-source-debug t)
+;; (setq auth-source-do-cache nil)
+;; (setq sendmail-program "/usr/bin/msmtp"
+;;       send-mail-function #'smtpmail-send-it
+;;       message-sendmail-f-is-evil t
+;;       smtpmail-smtp-user "prodip"
+;;       smtpmail-smtp-server "smtp.gmail.com"
+;;       message-sendmail-extra-arguments '("--read-envelope-from")
+;;       message-send-mail-function #'message-send-mail-with-sendmail)
 
 ;; Mail
 ;;
@@ -276,10 +294,48 @@
 ;; openwith package
 (setq +latex-viewers '(zathura))
 ;; elfeed
-(setq rmh-elfeed-org-files (list "~/Documents/notes/org/elfeed.org"))
+;; (setq rmh-elfeed-org-files (list "~/Documents/notes/org/elfeed.org"))
+
+(setq elfeed-feeds
+      '(
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UC1KmNKYC1l0stjctkGswl6g"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCoOae5nYA7VqaXzerajD0lg"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCNjPtOCvMrKY5eLwr_-7eUg"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCsNxHPbaCWL1tKw2hxGQD6g"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCnpekFV93kB1O0rVqEKSumg"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UC2Xd-TjJByJyK2w1zNwY0zQ"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCngn7SVujlvskHRvRKc1cTw"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCe3qdG0A_gr-sEdat5y2twQ"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCPHpx55tgrbm8FrYYCflAHw"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCWQaM7SpSECp9FELz-cHzuQ"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCwVEhEzsjLym_u1he4XWFkg"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCNXapAc8mXTwW82MTncdfzQ"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCurYxozQbvKn-oNUxNJh45Q"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCgBg0aacyJnw4qUnb1FlfEQ"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCHn_K1zOBYZqtmIYkXLEIQw"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCkKh0mX-A5uTbk60YutGFxg"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCVOTBwF0vnSxMRIbfSE_K_g"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCbYmF43dpGHz8gi2ugiXr0Q"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UC0TnW9acNxqeojxXDMbohcA"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UC6QYFutt9cluQ3uSM963_KQ"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCNI0qOojpkhsUtaQ4_2NUhQ"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCir93b_ftqInEaDpsWYbo_g"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCwAdQUuPT6laN-AQR17fe1g"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCfx8btclgvQHEBT3b0eBHWA"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UC3bLxUg5G7D8ImDI9V_f2qg"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UC1DTYW241WD64ah5BFWn4JA"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCfhbydY40P2Lli9HuBz8cdA"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCY5pzcvC5GtpdhOQe6KQqmg"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UCFbNIlppjAuEX4znoulh0Cw"
+        ))
+
 (after! elfeed
   (setq elfeed-curl-program-name "/usr/bin/curl")
-  (setq elfeed-search-filter "@3-month-ago"))
+  (setq elfeed-search-filter "@3-month-ago")
+)
+
 (add-hook! 'elfeed-search-mode-hook #'elfeed-update)
 ;; elfeed
 ;;
@@ -336,9 +392,9 @@
 ;;   ;; (setq org-mind-map-engine "twopi")  ; Radial layouts
 ;;   ;; (setq org-mind-map-engine "circo")  ; Circular Layout
 ;;   )
-(after! persp-mode
-  (setq persp-emacsclient-init-frame-behaviour-override "main")
-  )
+;; (after! persp-mode
+;;   (setq persp-emacsclient-init-frame-behaviour-override "main")
+;;   )
 
 
 
@@ -346,6 +402,10 @@
 
 
 ;; personal scripts
+
+(setq eww-search-prefix "https://www.google.com/search?q=")
+
+;; (setq eww-search-prefix "https://duckduckgo.com/html/?q=")
 
 (defun cust/vsplit-file-open (f)
   (let ((evil-vsplit-window-right 'nil))
@@ -430,27 +490,27 @@
 ;;     (list 'org-code 'org-block 'org-table)))
 
 
+    (setq-default org-download-image-dir "~/Documents/notes/org/org-notes/Assets")
 ;; Better org
 
-    (setq-default org-download-image-dir "~/Documents/notes/org/org-notes/Assets")
 
-(define-derived-mode astro-mode web-mode "astro")
-(setq auto-mode-alist
-      (append '((".*\\.astro\\'" . astro-mode))
-              auto-mode-alist))
+;; (define-derived-mode astro-mode web-mode "astro")
+;; (setq auto-mode-alist
+;;       (append '((".*\\.astro\\'" . astro-mode))
+;;               auto-mode-alist))
 
-(with-eval-after-load 'lsp-mode
-  (add-to-list 'lsp-language-id-configuration
-               '(astro-mode . "astro"))
+;; (with-eval-after-load 'lsp-mode
+;;   (add-to-list 'lsp-language-id-configuration
+;;                '(astro-mode . "astro"))
 
-  (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection '("astro-ls" "--stdio"))
-                    :activation-fn (lsp-activate-on "astro")
-                    :server-id 'astro-ls)))
+;;   (lsp-register-client
+;;    (make-lsp-client :new-connection (lsp-stdio-connection '("astro-ls" "--stdio"))
+;;                     :activation-fn (lsp-activate-on "astro")
+;;                     :server-id 'astro-ls)))
 
-(use-package! treesit-auto
-  :custom
-  (treesit-auto-install 'prompt)
-  :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode))
+;; (use-package! treesit-auto
+;;   :custom
+;;   (treesit-auto-install 'prompt)
+;;   :config
+;;   (treesit-auto-add-to-auto-mode-alist 'all)
+;;   (global-treesit-auto-mode))
