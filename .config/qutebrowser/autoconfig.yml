@@ -11,6 +11,7 @@ settings:
   content.blocking.method:
     global: both
   content.notifications.enabled:
+    http://localhost:8081: true
     https://dirtyindianporn.info: false
     https://wayofgainsurvey.top: false
   qt.environ:

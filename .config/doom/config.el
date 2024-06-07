@@ -253,7 +253,7 @@
 
 (map! :leader
       :desc "Doom Home"
-      "b h" #'+doom-dashboard/open)
+      "b h" #'scratch-buffer)
 
 
 (define-key evil-insert-state-map (kbd "C-l") 'forward-char)
@@ -403,7 +403,7 @@
 
 ;; personal scripts
 
-(setq eww-search-prefix "https://www.google.com/search?q=")
+(setq eww-search-prefix "https://www.startpage.com/sp/search?query=")
 
 ;; (setq eww-search-prefix "https://duckduckgo.com/html/?q=")
 

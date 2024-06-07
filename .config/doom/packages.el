@@ -69,6 +69,8 @@
 (package! elfeed-tube)
 (package! elfeed-web)
 (package! elfeed-tube-mpv)
+(package! read-aloud)
+(package! csv-mode)
 ;; (package! org-drill)
 ;; (package! org-mind-map)
 ;; (package! org-modern)

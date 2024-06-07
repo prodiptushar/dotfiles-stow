@@ -162,14 +162,14 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://google.com/search?hl=en&q={}', '!y': 'https://www.youtube.com/results?search_query={}', '!a': 'https://www.amazon.com/s?k={}', '!d': 'https://duckduckgo.com/?ia=web&q={}', '!dd': 'https://thefreedictionary.com/{}', '!e': 'https://www.ebay.com/sch/i.html?_nkw={}', '!fb': 'https://www.facebook.com/s.php?q={}', '!gh': 'https://github.com/search?o=desc&q={}&s=stars', '!gist': 'https://gist.github.com/search?q={}', '!gi': 'https://www.google.com/search?tbm=isch&q={}&tbs=imgo:1', '!gn': 'https://news.google.com/search?q={}', '!ig': 'https://www.instagram.com/explore/tags/{}', '!m': 'https://www.google.com/maps/search/{}', '!yt': 'https://yewtu.be/search?q={}', '!r': 'https://www.reddit.com/search?q={}', '!sd': 'https://slickdeals.net/newsearch.php?q={}&searcharea=deals&searchin=first', '!t': 'https://www.thesaurus.com/browse/{}', '!tw': 'https://twitter.com/search?q={}', '!w': 'https://en.wikipedia.org/wiki/{}', '!yelp': 'https://www.yelp.com/search?find_desc={}'}
+c.url.searchengines = {'DEFAULT': 'https://google.com/search?hl=en&q={}','!sp': 'https://www.startpage.com/sp/search?query={}', '!y': 'https://www.youtube.com/results?search_query={}', '!a': 'https://www.amazon.com/s?k={}', '!d': 'https://duckduckgo.com/?ia=web&q={}', '!dd': 'https://thefreedictionary.com/{}', '!e': 'https://www.ebay.com/sch/i.html?_nkw={}', '!fb': 'https://www.facebook.com/s.php?q={}', '!gh': 'https://github.com/search?o=desc&q={}&s=stars', '!gist': 'https://gist.github.com/search?q={}', '!gi': 'https://www.google.com/search?tbm=isch&q={}&tbs=imgo:1', '!gn': 'https://news.google.com/search?q={}', '!ig': 'https://www.instagram.com/explore/tags/{}', '!m': 'https://www.google.com/maps/search/{}', '!yt': 'https://yewtu.be/search?q={}', '!r': 'https://www.reddit.com/search?q={}', '!sd': 'https://slickdeals.net/newsearch.php?q={}&searcharea=deals&searchin=first', '!t': 'https://www.thesaurus.com/browse/{}', '!tw': 'https://twitter.com/search?q={}', '!w': 'https://en.wikipedia.org/wiki/{}', '!yelp': 'https://www.yelp.com/search?find_desc={}'}
 
 
 # Bindings for command mode
 config.bind('<Ctrl+j>', 'completion-item-focus next', mode='command')
 config.bind('<Ctrl+k>', 'completion-item-focus prev', mode='command')
 config.bind('ge', 'edit-url', mode='normal')
-c.qt.environ = {"NODE_PATH": "/usr/lib/node_modules"}
+c.qt.environ = {"NODE_PATH": "/home/prodip/.local/share/pnpm/global/5/node_modules/"}
 c.aliases = {"readability" : "spawn --userscript readability-js", 'q': 'quit'}
 config.bind(',;m', 'hint links spawn ~/.local/sync/scripts/fast-mpv {hint-url}')
 
