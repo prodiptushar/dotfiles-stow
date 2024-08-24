@@ -21,7 +21,7 @@
 ;; accept. For example:
 ;;
 
-(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 14 :weight 'regular)
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18 :weight 'regular)
      doom-unicode-font (font-spec :family "Noto Color Emoji"))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'modus-vivendi-tinted)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -132,10 +132,10 @@
 ;; Roam
 
 (setq! org-roam-directory "~/Documents/notes/org/")
-
+(setq! ispell-complete-word-dict "~/.cache/american-english-exhaustive")
 (use-package! org-roam
   :config
-  (setq org-roam-complete-everywhere t
+  (setq org-roam-complete-everywhere nil
         org-roam-capture-templates '(
                                      ("d" "default" plain
                                       "%?"
@@ -149,9 +149,23 @@
 
         )
   )
+
+(defun md-to-org-region (start end)
+  "Convert region from markdown to org"
+  (interactive "r")
+  (shell-command-on-region start end "pandoc -f markdown -t org" t t))
+
+   (setq org-link-frame-setup
+   '((vm . vm-visit-folder-other-frame)
+     (vm-imap . vm-visit-imap-folder-other-frame)
+     (gnus . org-gnus-no-new-news)
+     (file . find-file-other-window)
+     (wl . wl-other-frame)))
+
 ;; (use-package! org-roam
 ;;   :config
 ;;   (setq org-roam-complete-everywhere t
+        ;; org-roam-node-display-template (concat "${title:*} " (propertize "${tags:30}" 'face 'org-tag))
 ;;         org-roam-capture-templates
 ;;                 '(("d" "default" plain
 ;;                    "%?"
@@ -398,8 +412,17 @@
 
 
 
+;; (use-package! xclip
+;;   :config
+;;   (setq xclip-program "wl-copy")
+;;   (setq xclip-select-enable-clipboard t)
+;;   (setq xclip-mode t)
+;;   (setq xclip-method (quote wl-copy)))
 
 
+;;(setq interprogram-paste-function
+;;      (lambda ()
+;;        (shell-command-to-string "wl-paste")))
 
 ;; personal scripts
 
@@ -490,8 +513,9 @@
 ;;     (list 'org-code 'org-block 'org-table)))
 
 
-    (setq-default org-download-image-dir "~/Documents/notes/org/org-notes/Assets")
+    ;; (setq-default org-download-image-dir "~/Documents/notes/org/org-notes/Assets")
 ;; Better org
+(setq! org-download-screenshot-method "wl-paste > %s")
 
 
 ;; (define-derived-mode astro-mode web-mode "astro")

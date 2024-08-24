@@ -16,6 +16,8 @@ source <(fzf --zsh)
 ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
 ZVM_VI_ESCAPE_BINDKEY=kj
 eval "$(starship init zsh)"
+eval "$(atuin init zsh)"
+eval $(thefuck --alias)
 
 
 

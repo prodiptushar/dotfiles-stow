@@ -71,6 +71,8 @@
 (package! elfeed-tube-mpv)
 (package! read-aloud)
 (package! csv-mode)
+(package! xclip)
+(package! modus-themes)
 ;; (package! org-drill)
 ;; (package! org-mind-map)
 ;; (package! org-modern)
