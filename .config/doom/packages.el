@@ -72,6 +72,7 @@
 (package! read-aloud)
 (package! csv-mode)
 (package! xclip)
+(package! org-timeblock)
 (package! modus-themes)
 ;; (package! org-drill)
 ;; (package! org-mind-map)

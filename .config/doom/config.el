@@ -41,7 +41,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Documents/notes/org/")
-(setq org-agenda-files '("~/Documents/notes/org/inbox/20220819220526-inbox.org"))
+(setq org-agenda-files '("~/Documents/notes/org/inbox/20220819220526-inbox.org" "~/Documents/notes/org/inbox/20240919232007-tasks.org"))
 ;; (setq org-agenda-files
 ;;       (append
 ;;        (file-expand-wildcards "~/Documents/notes/org/agenda/*.org")))
@@ -132,7 +132,9 @@
 ;; Roam
 
 (setq! org-roam-directory "~/Documents/notes/org/")
-(setq! ispell-complete-word-dict "~/.cache/american-english-exhaustive")
+(setq! ispell-complete-word-dict "/home/prodip/.cache/words")
+(setq! company-ispell-dictionary "/home/prodip/.cache/words")
+(setq! ispell-program-name "/usr/bin/aspell")
 (use-package! org-roam
   :config
   (setq org-roam-complete-everywhere nil
@@ -447,6 +449,39 @@
       :map org-mode-map
       "C-l" #'forward-char)
 
+(map! :leader
+      "om" #'+prodip/markdown-notes-search
+      )
+
+(defcustom markdown-directory "~/Documents/notes/markdown"
+  "Directory with markdown files.
+This is just a default location to look for Markdown files.  There is no need
+at all to put your files into this directory.  It is used in the
+following situations:
+
+1. When a capture template specifies a target file that is not an
+   absolute path.  The path will then be interpreted relative to
+   `markdown-directory'
+2. When the value of variable `markdown-agenda-files' is a single file, any
+   relative paths in this file will be taken as relative to
+   `markdown-directory'."
+  :group 'org-refile
+  :group 'org-capture
+  :type 'directory)
+
+(setq! markdown-directory "~/Documents/notes/markdown")
+
+(defun +prodip/markdown-notes-search (query)
+  "Perform a text search on `org-directory'."
+  (interactive
+   (list (if (doom-region-active-p)
+             (buffer-substring-no-properties
+              (doom-region-beginning)
+              (doom-region-end))
+           "")))
+  (require 'markdown-mode)
+  (+default/search-project-for-symbol-at-point
+   query markdown-directory))
 
 
 ;; personal scripts
