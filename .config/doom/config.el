@@ -141,7 +141,7 @@
         org-roam-capture-templates '(
                                      ("d" "default" plain
                                       "%?"
-                                      :if-new (file+head "inbox/%<%Y%m%d%H%M%S>-${slug}.org" " ${title}\n")
+                                      :if-new (file+head "inbox/%<%Y%m%d%H%M%S>-${slug}.org" "#+TITLE: ${title}\n")
                                       :unnarrowed t)
                                      )
 
@@ -451,6 +451,9 @@
 
 (map! :leader
       "om" #'+prodip/markdown-notes-search
+      )
+(map! :leader
+      "oo" #'+default/org-notes-search
       )
 
 (defcustom markdown-directory "~/Documents/notes/markdown"

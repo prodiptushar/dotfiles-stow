@@ -1,6 +1,7 @@
 set ratios 1:2:3
 # Basic Settings
 set previewer ctpv
+set forcekitty
 set preview true
 set hidden true
 set drawbox true
