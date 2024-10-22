@@ -38,6 +38,7 @@ alias nb=newsboat
 alias getmirror='reflector --country India,China,Japan,Vietnam  --protocol https,http --sort rate'
 alias tt=taskwarrior-tui
 alias t=task
+alias h=Hyprland
 
 
 

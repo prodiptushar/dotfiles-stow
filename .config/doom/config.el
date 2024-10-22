@@ -441,13 +441,17 @@
       :map embark-file-map
       "V" #'cust/vsplit-file-open)
 
-(map! :after org
-      :map org-mode-map
+
+(after! evil-org
+(map!  :map org-mode-map
+      "C-l" #'forward-char)
+
+(map!  :map org-mode-map
       "C-h" #'backward-char)
 
-(map! :after org
-      :map org-mode-map
-      "C-l" #'forward-char)
+(map!  :map org-mode-map
+      "<tab>" #'acm-complete)
+   )
 
 (map! :leader
       "om" #'+prodip/markdown-notes-search
@@ -486,6 +490,10 @@ following situations:
   (+default/search-project-for-symbol-at-point
    query markdown-directory))
 
+;; (use-package! lsp-bridge
+;;   :config
+;;   (setq lsp-bridge-enable-log nil)
+;;   (global-lsp-bridge-mode))
 
 ;; personal scripts
 
