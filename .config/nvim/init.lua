@@ -249,7 +249,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "o", "o<cmd>AutolistNewBullet<cr>")
 			vim.keymap.set("n", "O", "O<cmd>AutolistNewBulletBefore<cr>")
 			vim.keymap.set("n", "<CR>", "<cmd>AutolistToggleCheckbox<cr><CR>")
-			vim.keymap.set("n", "<C-r>", "<cmd>AutolistRecalculate<cr>")
+			vim.keymap.set("n", "<leader>lr", "<cmd>AutolistRecalculate<cr>")
 
 			-- cycle list types with dot-repeat
 			vim.keymap.set("n", "<leader>cn", require("autolist").cycle_next_dr, { expr = true })
@@ -965,12 +965,13 @@ require("lazy").setup({
 					-- `friendly-snippets` contains a variety of premade snippets.
 					--    See the README about individual language/framework/plugin snippets:
 					--    https://github.com/rafamadriz/friendly-snippets
-					-- {
-					--   'rafamadriz/friendly-snippets',
-					--   config = function()
-					--     require('luasnip.loaders.from_vscode').lazy_load()
-					--   end,
-					-- },
+					{
+						"rafamadriz/friendly-snippets",
+						config = function()
+							require("luasnip.loaders.from_vscode").lazy_load()
+							require("luasnip.loaders.from_snipmate").lazy_load()
+						end,
+					},
 				},
 			},
 			"saadparwaiz1/cmp_luasnip",
@@ -986,7 +987,12 @@ require("lazy").setup({
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 			luasnip.config.setup({})
-
+			local has_words_before = function()
+				unpack = unpack or table.unpack
+				local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+				return col ~= 0
+					and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+			end
 			cmp.setup({
 				snippet = {
 					expand = function(args)
@@ -1013,29 +1019,46 @@ require("lazy").setup({
 					--  This will auto-import if your LSP supports it.
 					--  This will expand snippets if the LSP sent a snippet.
 					["<C-y>"] = cmp.mapping.confirm({ select = true }),
-
 					-- If you prefer more traditional completion keymaps,
 					-- you can uncomment the following lines
-					--['<CR>'] = cmp.mapping.confirm { select = true },
-					--['<Tab>'] = cmp.mapping.select_next_item(),
-					--['<S-Tab>'] = cmp.mapping.select_prev_item(),
-
-					-- Manually trigger a completion from nvim-cmp.
-					--  Generally you don't need this, because nvim-cmp will display
-					--  completions whenever it has completion options available.
-					["<C-Space>"] = cmp.mapping.complete({}),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					-- ["<Tab>"] = cmp.mapping.select_next_item(),
+					["<S-Tab>"] = cmp.mapping.select_prev_item(),
 					["<Tab>"] = cmp.mapping(function(fallback)
-						-- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
 						if cmp.visible() then
-							local entry = cmp.get_selected_entry()
-							if not entry then
-								cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+							if #cmp.get_entries() == 1 then
+								cmp.confirm({ select = true })
+							else
+								cmp.select_next_item()
 							end
-							cmp.confirm()
+						--[[ Replace with your snippet engine (see above sections on this page)
+      elseif snippy.can_expand_or_advance() then
+        snippy.expand_or_advance() ]]
+						elseif has_words_before() then
+							cmp.complete()
+							if #cmp.get_entries() == 1 then
+								cmp.confirm({ select = true })
+							end
 						else
 							fallback()
 						end
 					end, { "i", "s" }),
+					-- Manually trigger a completion from nvim-cmp.
+					--  Generally you don't need this, because nvim-cmp will display
+					--  completions whenever it has completion options available.
+					["<C-Space>"] = cmp.mapping.complete({}),
+					-- ["<Tab>"] = cmp.mapping(function(fallback)
+					-- 	-- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
+					-- 	if cmp.visible() then
+					-- 		local entry = cmp.get_selected_entry()
+					-- 		if not entry then
+					-- 			cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+					-- 		end
+					-- 		cmp.confirm()
+					-- 	else
+					-- 		fallback()
+					-- 	end
+					-- end, { "i", "s" }),
 					-- Think of <c-l> as moving to the right of your snippet expansion.
 					--  So if you have a snippet that's like:
 					--  function $name($args)
@@ -1554,7 +1577,7 @@ require("lazy").setup({
 	--
 	--  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
 	--    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-	-- { import = 'custom.configs' },
+	-- { import = 'custom.plugins' },
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -1592,9 +1615,11 @@ map("n", "<leader>nd", "<CMD>ObsidianDailies<CR>")
 map("n", "<leader>nt", "<CMD>ObsidianTags<CR>")
 map("n", "<leader>ns", "<CMD>ObsidianSearch<CR>")
 map("n", "<leader>nn", "<CMD>ObsidianQuickSwitch<CR>")
+map("n", "<leader>no", "<CMD>ObsidianOpen<CR>")
 map("n", "[b", "<CMD>bp<CR>", { desc = "previous buffer" })
 map("n", "]b", "<CMD>bn<CR>", { desc = "next buffer" })
 map("n", "<leader>bd", "<CMD>bd<CR>", { desc = "buffer delete" })
+map("n", "<C-r>", "<CMD>redo<CR>")
 
 ---personal config
 --- test new more and more
